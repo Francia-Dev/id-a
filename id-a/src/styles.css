@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.botaobuscar {
+    border-radius: 15px;
+    border: 1px solid #6B3EB8;
+    color: #6B3EB8;
+    font-size: 18px;
+    background-color: white;
+}
+
+.botaobuscar:hover {
+    border-radius: 15px;
+    border-color: white;
+    color: white;
+    background-color: #6B3EB8;
+} 
+
+strong {
+    color: orange;
+}

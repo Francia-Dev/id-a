@@ -1,0 +1,110 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    width: 97%;
+    margin: 0 auto;
+}
+
+.mouse:hover{
+    background-color: #4b2078;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.mouse:active{
+    background-color: #ebc127;
+    color: #111111
+    
+}
+
+.mouse {
+    text-align: justify;
+    padding-right: 1em;
+}
+
+input {
+    border: none;
+    border-bottom: #6B3EB8 2px solid;
+    font-size: 20px;
+    color: orange;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+
+
+
+.menuleft{
+    background-color:#b561b1;
+    padding: 3em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.menuleft a{
+    color: #111111;
+    font-size: 20px;
+
+}
+
+
+.sobreid {
+    text-align: justify;
+    font-size: 18px;
+}
+
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+
+}
+
+.form-control {
+    font-size: 15px
+}
+
+.botaoenviar {
+    background-color: #4b2078;
+    color: aliceblue;
+    border: none;
+    width: 50%;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.botaoenviar:hover{
+    border: solid 1px #4b2078;
+    background-color:aliceblue;
+    color: #4b2078 ;
+}
+
+.botaoenviar:active {
+    background-color: #ebc127;
+    color: #111111;
+    border: none;
+}
+
+.opcao2 {
+    text-align: center
+}
+
+.contatos {
+    width: 20px;
+}
+
+.itencontato {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+
+
+.botaobuscar:active {
+    background-color: #ebc127;
+   
+
+}

@@ -1,0 +1,17 @@
+<div class="all" style="text-align: center">
+    <hr><br>
+    <div class="conteudo" *ngFor="let item of post">
+        <div class="numero" *ngIf="post != null">
+                <p>{{item.idPostagem}} de {{post.length}}</p> 
+        </div>
+        <div class="ttl">
+            {{item.titulo}}
+            <p>{{item.dataInclusao}}</p>
+        </div>
+        <img class="postimg" src="{{item.linkimg}}" />
+        <div class="content">
+            {{item.texto}}
+        </div>
+       
+    </div>
+</div>

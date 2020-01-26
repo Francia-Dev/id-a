@@ -1,0 +1,20 @@
+<div class="conteudo">
+    <div class="formulario col-8">
+        <label for="emailLogin">Email:</label>
+        <br>
+        <input type="text" [(ngModel)]="usuario.email" id="emailLogin">
+        <div style="visibility: hidden" id="erroEmail">⚠ Campo obrigatório.</div>
+        <label for="senhaLogin">Senha:</label>
+        <br>
+        <input type="password" [(ngModel)]="usuario.senha" id="senhaLogin">
+        <div style="visibility: hidden" id="erroSenha">⚠ Campo obrigatório.</div>
+        <button (click)="verificar()" class="botaobuscar">Logar</button> 
+        <p>Esqueceu a senha? <strong> Clique aqui</strong> para recuperar.</p>
+    </div>
+    <div class="texto col-4">
+        <h3>Não tem conta?</h3>
+        <h2>Junte-se a nós.</h2>
+        <p>Estamos aqui para te ajudar a tornar a sua ideia real, junte-se à comunidade, é o primeiro passo para dar vida ao seu projeto!</p>
+
+    </div>
+</div>

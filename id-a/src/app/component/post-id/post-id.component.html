@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+    <input id="txtPost" class="form-control procurar" type="number" [(ngModel)]="id" (keyup)="btnClick()"
+        placeholder="Id" />
+    <button id="btnPost" class="btn btn-outline-success my-2 my-sm-0 botaobuscar" (click)="btnClick()">Buscar</button>
+    <br><br>
+    <div *ngIf="id != null; else elseBlock">
+        <div class="ttl">{{post.titulo}}</div>
+        <div><label *ngIf="post.idPostagem != null"><img src="{{post.linkimg}}" /></label> </div>
+        <div class="content">{{post.texto}} </div>
+        <div class="numero">{{post.dataInclusao}} </div>
+    </div>
+    <ng-template #elseBlock>
+    <h3>Informe o Id para continuar...</h3>
+     <img src="./../../../assets/pesquisa.gif">   
+    </ng-template>
+    
+</div>

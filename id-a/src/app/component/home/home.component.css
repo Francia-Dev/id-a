@@ -1,0 +1,78 @@
+h1{
+    background-image: linear-gradient( to right, #490863 80%, #ffffff 10%, #ffffff 81%, orange 80%, orange); 
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: 'Noticia Text', serif;
+}
+
+.bemVindo {
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.bemVindo p {
+    padding: 2rem 0;
+    font-size: 22px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h2{
+    color: orange;
+    font-family: 'Noticia Text', serif;
+}
+
+h5{
+    color: orange;
+    font-family: 'Noticia Text', serif;
+    font-size: 40px;
+    text-align: center;
+    background-color: #490863;
+    padding: 1rem 0;
+    margin: 2rem 0;
+}
+
+h3 {
+    color: #490863;
+    font-family: 'Noticia Text', serif;
+}
+
+.imgpassos {
+    max-width: 25%;
+}
+
+
+
+.content {
+    display: inline-block;
+    width: 70%;
+    font-size: 24px;
+    vertical-align: middle
+}
+
+
+#help{
+    font-size: 15px
+}
+
+.experiencias {
+    height: 20%;
+}
+
+.carousel-control-next:hover, .carousel-control-prev:hover{
+    background-color: black
+}
+
+.carousel-control-next:active, .carousel-control-prev:active{
+    background-color: orange
+}
+
+.carousel-inner, .porOndeComecar, .bemVindo { 
+    width: 85%;
+    margin: 0 auto 2em;
+
+}
+
+
+
