@@ -1,19 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
 .botaobuscar {
     border-radius: 15px;
-    border: 1px solid #6B3EB8;
-    color: #6B3EB8;
+    border: 1px solid #7006BC;
+    color: #7006BC;
     font-size: 18px;
-    background-color: white;
 }
 
 .botaobuscar:hover {
     border-radius: 15px;
-    border-color: white;
-    color: white;
-    background-color: #6B3EB8;
-} 
+    border-color: #7006BC;
+    color:aliceblue;
+    background-color: #7006BC;
+}
 
 strong {
     color: orange;
+}
+
+.botaobuscarbranco {
+    border-radius: 15px;
+    border: 1px solid #7006BC;
+    color: #7006BC;
+    font-size: 25px;
+    background-color: #c583f3;
+    width: 40%;
+    margin: 1rem;
+}
+
+.botaobuscarbranco:hover {
+    border-radius: 15px;
+    border-color: #c583f3;
+    color:#c583f3;
+    background-color:#7006BC;
 }

@@ -8,16 +8,15 @@
     height: auto;
 }
 
-.botaobuscar {
-    border-radius: 15px;
-    border: 1px solid #4b2078;
-    color: #4b2078;
-    font-size: 18px;
+.navbar{
+    border-bottom: #7006BC solid 3px;
+    height: 80px;
 }
 
-.botaobuscar:hover {
-    border-radius: 15px;
-    border-color: #4b2078;
-    color:aliceblue;
-    background-color: #4b2078;
+#navlogo {
+    width: 10%;
+    min-width: 140px;
+    position: absolute;
+    left: 45%;
+    top: 10px;
 }
