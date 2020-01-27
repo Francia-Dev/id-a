@@ -1,14 +1,15 @@
 .nav-link {
-    font-size: 20px;
+    font-size: 25px;
     margin: 1rem;
-
+    padding: .5rem 0 !important;
+    display: inline-block;
 }
 
 .nav-brand {
     height: auto;
 }
 
-.navbar{
+.navbar {
     border-bottom: #7006BC solid 3px;
     height: 80px;
 }
@@ -17,6 +18,84 @@
     width: 10%;
     min-width: 140px;
     position: absolute;
-    left: 45%;
+    margin: 0 44.5%;
     top: 10px;
+    z-index: 20;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.logCad {
+    margin: auto 0;
+    font-size: 25px;
+    color: rgb(0, 0, 0, .5);
+    padding: .5rem 0;
+    display: inline-block
+}
+
+@media (max-width: 1200px) {
+    #navlogo {
+        visibility: hidden;
+    }
+    .navbar {
+        height: 20%;
+    }
+}
+
+strong {
+    font-weight: normal;
+    color: rgb(0, 0, 0, .5)
+}
+
+.logCad a {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 0
+}
+
+@media (max-width: 1107px) {
+    .nav-link,
+    .nav-item,
+    .logCad a {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .nav-link:hover,
+    .nav-item:hover,
+    .logCad a:hover {
+        cursor: pointer
+    }
+    .logCad a {
+        margin-bottom: .5rem
+    }
+    .logCad strong {
+        visibility: hidden;
+    }
+    .dropdown-menu {
+        position: absolute
+    }
+}
+
+.cadastro {
+    font-size: 25px;
+    color: #7006BC
+}
+
+.cadastro:hover {
+    color: orange;
+    text-decoration: none;
+}
+
+.collapse.show,
+.collapsing {
+    background-color: #f8f9fa;
+    text-align: left;
+}
+
+.collapse:not(.show) {
+    background-color: none
 }

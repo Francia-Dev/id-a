@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+body{
+    margin-top: 11%
+}
+
 .botaobuscar {
     border-radius: 15px;
     border: 1px solid #7006BC;

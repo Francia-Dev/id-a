@@ -1,42 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light barra">
+<img id="navlogo" aria-expanded="true" class="show" src="./../../../assets/Logao.png" alt="logo">
+<nav class="navbar navbar-expand-xl navbar-light bg-light barra">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+  </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <img id="navlogo" src="./../../../assets/Logao.png" alt="logo">
-      <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/login'" >Login</a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/sobre'">Sobre Nós</a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/contato'" >Contato</a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/cadastro'" >Cadastro</a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" [routerLink]="'/ajuda'" >Ajuda</a>
-        </div>
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <div class="row" style="width: 100%; margin: 0 auto;">
+                <div class="col-6 separador">
+                    <a class="nav-link" [routerLink]="'/home'" style="margin-left: 0">Home <span class="sr-only">(current)</span></a>
+
+                    <div class="nav-item dropdown" style="display: inline-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Posts
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="'/postInsert'">Novo</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="'/postUpdate'">Atualizar</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="'/postId'">Buscar</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="'/postAll'">Mostrar todos</a>
-          </div>
-      </div>
-      </div>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" [routerLink]="'/postUpdate'">Atualizar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postId'">Buscar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postAll'">Mostrar todos</a>
+                        </div>
+                    </div>
+
+                    <a class="nav-link" [routerLink]="'/postInsert'">Novo</a>
+                    <a class="nav-link" [routerLink]="'/sobre'">Sobre Nós</a>
+
+
+
+                </div>
+
+
+
+                <div class="col-6 separador" style="text-align: end">
+
+                    <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+
+                    <a class="nav-link" [routerLink]="'/ajuda'">Ajuda</a>
+
+
+                    <div class="logCad">
+                        <a class="nav-link" [routerLink]="'/login'">Login</a><strong>/</strong>
+                        <a [routerLink]="'/cadastro'" class="cadastro">Junte-se a nós</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 </nav>
