@@ -13,42 +13,38 @@ input {
     margin-bottom: 1em;
 }
 
-
 .row {
     padding: 1em;
     border: gray solid 1px;
-    margin: 2em 0;  
+    margin: 2em 0;
     font-size: 21px;
     border-radius: 2%
 }
 
-.nav-pills{
+.nav-pills {
     border-right: gray solid 1px;
 }
 
-.nav-link{
-margin-right: 1em;
-color: #6B3EB8; 
+.nav-link {
+    margin-right: 1em;
+    color: #6B3EB8;
 }
 
 .nav-link:hover {
     color: orange;
 }
 
-.nav-link-active{
-    background-color: none;
-}
-
-.col-4, .col-8 {
+.col-4,
+.col-8 {
     padding: 0;
 }
 
-.tab-content{
+.tab-content {
     padding: 1em 0 1em 1em;
     text-align: justify;
 }
 
-h1{
+h1 {
     font-size: 25px;
     text-align: center;
     color: #6B3EB8;
@@ -58,7 +54,6 @@ h1{
 
 .formulario {
     margin: 1em 0;
-
 }
 
 label {
@@ -77,5 +72,5 @@ label {
     font-size: 18px;
     margin: 5px;
     color: rgb(189, 4, 4);
-    font-weight: bold; 
+    font-weight: bold;
 }
