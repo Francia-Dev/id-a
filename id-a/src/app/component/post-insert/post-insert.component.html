@@ -4,24 +4,24 @@
         <div class="col-9 formPost formTtl">
             <label for="postTitulo">Titulo <strong style="color:brown; display: inline-block;">*</strong></label><br>
             <input type="text" id="postTitulo" [(ngModel)]="post.titulo">
-        </div>  
-        <div class="col-3 formPost formDt">    
+        </div>
+        <div class="col-3 formPost formDt">
             <label for="postData">Data</label>
             <input type="text" id="postData" [(ngModel)]="post.dataInclusao">
         </div>
         <div class="row">
-        <div class="col-3 formPost">
-        <div id="previewImagem"><img src="./../../../assets/imagemPrev.png" alt=""></div>
-            <input type="" class="linkimg" id="postLinkimg" [(ngModel)]="post.linkimg" placeholder="URL da imagem">
-            <button id="previewBotao" class="botaobuscar" (click)="previa()">Preview</button>
+            <div class="col-3 formPost">
+                <div id="previewImagem"><img src="./../../../assets/imagemPrev.png" alt=""></div>
+                <input type="" class="linkimg" id="postLinkimg" [(ngModel)]="post.linkimg" placeholder="URL da imagem">
+                <button id="previewBotao" class="botaobuscar" (click)="previa()">Preview</button>
+            </div>
+            <div class="col-9 formPost">
+                <label for="postTexto">Texto <strong style="color:brown; display: inline-block;">*</strong></label><br>
+                <strong class="col-12" style="display: inline-block; color:brown; text-align: right; font-weight: normal">* Campos marcados são obrigatórios</strong>
+                <textarea id="postTexto" [(ngModel)]="post.texto"></textarea>
+            </div>
         </div>
-        <div class="col-9 formPost">
-            <label for="postTexto">Texto <strong style="color:brown; display: inline-block;">*</strong></label><br>
-            <strong class="col-12" style="display: inline-block; color:brown; text-align: right; font-weight: normal">* Campos marcados são obrigatórios</strong>
-            <textarea id="postTexto" [(ngModel)]="post.texto"></textarea>
-        </div>
-        </div>
-      
+
         <div>
             <button id="postBotao" class="botaobuscar enviar" (click)="inserir()">Postar</button>
         </div>

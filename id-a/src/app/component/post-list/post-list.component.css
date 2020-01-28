@@ -1,4 +1,4 @@
-.ttl{
+.ttl {
     font-size: 50px;
     text-align: left;
     font-family: 'Noticia Text', serif;
@@ -22,10 +22,9 @@ img {
     font-size: 30px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     padding: 1rem 0;
-    
 }
 
-.conteudo{
+.conteudo {
     width: 85%;
     ;
     margin: 0 auto;

@@ -2,7 +2,7 @@
     <hr><br>
     <div class="conteudo" *ngFor="let item of post">
         <div class="numero" *ngIf="post != null">
-                <p>{{item.idPostagem}} de {{post.length}}</p> 
+            <p>{{item.idPostagem}} de {{post.length}}</p>
         </div>
         <div class="ttl">
             {{item.titulo}}
@@ -12,6 +12,6 @@
         <div class="content">
             {{item.texto}}
         </div>
-       
+
     </div>
 </div>

@@ -1,20 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
+@import "./Styles/css/bootstrap.min.css";
+body {
     margin-top: 11%
 }
 
 .botaobuscar {
-    border-radius: 15px;
+    border-radius: 30px;
     border: 1px solid #7006BC;
     color: #7006BC;
     font-size: 18px;
 }
 
 .botaobuscar:hover {
-    border-radius: 15px;
+    border-radius: 30px;
     border-color: #7006BC;
-    color:aliceblue;
+    color: aliceblue;
     background-color: #7006BC;
 }
 
@@ -23,18 +24,24 @@ strong {
 }
 
 .botaobuscarbranco {
-    border-radius: 15px;
-    border: 1px solid #7006BC;
-    color: #7006BC;
+    border-radius: 30px;
+    border-color: orange;
+    color: orange;
+    background-color: #7006BC;
     font-size: 25px;
-    background-color: #c583f3;
     width: 40%;
     margin: 1rem;
+    transition-delay: 20ms;
 }
 
 .botaobuscarbranco:hover {
-    border-radius: 15px;
-    border-color: #c583f3;
-    color:#c583f3;
-    background-color:#7006BC;
+    background-color: orange;
+    color: #7006BC;
+}
+
+.botaobuscarbranco:active {
+    color: #7006BC;
+    background-color: #c583f3;
+    box-shadow: none;
+    border: #7006BC 1px solid
 }
