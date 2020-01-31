@@ -2,7 +2,23 @@
 
 @import "./Styles/css/bootstrap.min.css";
 body {
-    margin-top: 11%
+    margin-top: 11%;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    margin-right: 2%;
+    background: #F4F4F4;
+    z-index: 1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 22px
 }
 
 .botaobuscar {

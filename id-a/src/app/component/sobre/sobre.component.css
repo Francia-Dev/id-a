@@ -3,21 +3,13 @@ body {
     font-size: 21px
 }
 
-main {
-    width: 97%;
-    margin: 0 auto;
-}
-
-.mouse:hover{
-    background-color: #4b2078;
-    color: aliceblue;
+.mouse:hover {
     cursor: pointer;
 }
 
-.mouse:active{
+.mouse:active {
     background-color: #ebc127;
     color: #111111
-    
 }
 
 .mouse {
@@ -26,10 +18,53 @@ main {
     margin: 1em 0;
 }
 
-.mouse img{
-    width: 15%;
+.card-img {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
 }
 
+.card-body {
+    display: inline-block;
+    padding: 0 2em;
+    margin: auto 0;
+    text-align: left;
+}
+
+.card-text {
+    vertical-align: middle;
+    margin-top: 1rem;
+}
+
+.card {
+    display: inline-block;
+}
+
+.footerimagem img {
+    width: 1em;
+    margin: .5rem 5%;
+    display: inline-block;
+    opacity: 50%;
+}
+
+.footerimagem img:hover {
+    transition-delay: 50ms;
+    opacity: 100%;
+}
+
+.footerimagem {
+    position: absolute;
+    display: table;
+    top: 84%;
+    transition-duration: 300ms;
+    border-radius: 5px;
+    border-top: none;
+}
+
+.footerimagem:hover {
+    background-color: rgb(17, 17, 17, 50%);
+    transition-duration: 300ms;
+}
 
 .sobreid {
     text-align: justify;
@@ -39,7 +74,6 @@ main {
 label {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
-
 }
 
 .form-control {
@@ -47,19 +81,18 @@ label {
 }
 
 .botaoenviar {
-    background-color: #4b2078;
+    background-color: #7006BC;
     color: aliceblue;
     border: none;
     width: 50%;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
-.botaoenviar:hover{
-    border: solid 1px #4b2078;
-    background-color:aliceblue;
-    color: #4b2078 ;
+.botaoenviar:hover {
+    border: solid 1px #7006BC;
+    background-color: aliceblue;
+    color: #7006BC;
 }
 
 .botaoenviar:active {
@@ -84,7 +117,6 @@ label {
 .nav-link {
     font-size: 20px;
     margin: 1rem;
-
 }
 
 .nav-brand {
@@ -93,29 +125,61 @@ label {
 
 .botaobuscar {
     border-radius: 15px;
-    border: 1px solid #4b2078;
-    color: #4b2078;
+    border: 1px solid #7006BC;
+    color: #7006BC;
     font-size: 18px;
 }
 
 .botaobuscar:hover {
     border-radius: 15px;
-    border-color: #4b2078;
-    color:aliceblue;
-    background-color: #4b2078;
+    border-color: #7006BC;
+    color: aliceblue;
+    background-color: #7006BC;
 }
 
 .botaobuscar:active {
     background-color: #ebc127;
-   
-
 }
 
 h1 {
     font-family: 'Noticia Text', serif;
-    color: #4b2078;
+    color: #7006BC;
+}
+
+.backgroundttl {
+    background-image: linear-gradient(#ffffff, #ffffff 78%, #7006BC 78%, #7006BC 93%, #ffffff 93%, #ffffff);
+    border-bottom: orange solid .3rem;
+    margin: 4em 0;
+    width: 100%;
 }
 
 h3 {
     font-family: 'Noticia Text', serif;
+    color: orange;
+    background-color: #ffffff;
+    vertical-align: top;
+    font-size: 32px;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+h5 {
+    color: #7006BC;
+    font-family: 'Noticia Text', serif;
+    font-size: 45px;
+    text-align: center;
+    background-color: #ffffff;
+    display: inline-block;
+    margin-left: 18em;
+    padding: 0 1%;
+    margin-bottom: .2rem;
+}
+
+hr {
+    margin: 0
+}
+
+.conteudo {
+    width: 80%;
+    margin: 0 auto;
 }

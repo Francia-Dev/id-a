@@ -7,22 +7,23 @@
         <div class="navbar-nav mr-auto mt-2 mt-lg-0">
             <div class="row" style="width: 100%; margin: 0 auto;">
                 <div class="col-6 separador">
-                    <a class="nav-link" [routerLink]="'/home'" style="margin-left: 0">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " [routerLink]="'/home'" style="margin-left: 0">Home <span class="sr-only">(current)</span></a>
 
                     <div class="nav-item dropdown" style="display: inline-block">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Posts
+            Projetos
           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" [routerLink]="'/postUpdate'">Atualizar</a>
+                            <a class="dropdown-item " [routerLink]="'/postUpdate'">Atualizar</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" [routerLink]="'/postId'">Buscar</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" [routerLink]="'/postAll'">Mostrar todos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postInsert'">Novo</a>
                         </div>
                     </div>
 
-                    <a class="nav-link" [routerLink]="'/postInsert'">Novo</a>
                     <a class="nav-link" [routerLink]="'/sobre'">Sobre Nós</a>
 
 
