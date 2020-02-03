@@ -1,21 +1,31 @@
 body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 21px
+    font-size: 21px;
 }
 
-.mouse:hover {
-    cursor: pointer;
+.fundo {
+    background-color: #7006BC;
+    font-size: 23px;
+    color: #c583f3;
+    text-align: justify
 }
 
-.mouse:active {
-    background-color: #ebc127;
-    color: #111111
-}
 
-.mouse {
-    text-align: justify;
-    padding-right: 1em;
-    margin: 1em 0;
+/* 
+h1 {
+    color: #7006BC;
+    font-size: 60px;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto .5rem;
+    font-family: 'Noticia Text', serif;
+    text-transform: uppercase;
+} */
+
+.sobreid {
+    font-size: 50px!important;
+    color: orange;
+    text-align: center!important;
 }
 
 .card-img {
@@ -141,15 +151,10 @@ label {
     background-color: #ebc127;
 }
 
-h1 {
-    font-family: 'Noticia Text', serif;
-    color: #7006BC;
-}
-
 .backgroundttl {
     background-image: linear-gradient(#ffffff, #ffffff 78%, #7006BC 78%, #7006BC 93%, #ffffff 93%, #ffffff);
     border-bottom: orange solid .3rem;
-    margin: 4em 0;
+    margin: 3rem 0;
     width: 100%;
 }
 

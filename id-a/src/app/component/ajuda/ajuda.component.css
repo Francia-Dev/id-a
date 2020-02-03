@@ -3,22 +3,22 @@
     margin: 2em auto;
 }
 
-input {
-    border: none;
-    border-bottom: #6B3EB8 2px solid;
-    font-size: 20px;
-    color: orange;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1em;
-}
-
 .row {
     padding: 1em;
     border: gray solid 1px;
     margin: 2em 0;
     font-size: 21px;
     border-radius: 2%
+}
+
+.col-4,
+.col-8 {
+    padding: 0;
+}
+
+.tab-content {
+    padding: 1em 0 1em 1em;
+    text-align: justify;
 }
 
 .nav-pills {
@@ -34,16 +34,6 @@ input {
     color: orange;
 }
 
-.col-4,
-.col-8 {
-    padding: 0;
-}
-
-.tab-content {
-    padding: 1em 0 1em 1em;
-    text-align: justify;
-}
-
 h1 {
     font-size: 25px;
     text-align: center;
@@ -56,14 +46,7 @@ h1 {
     margin: 1em 0;
 }
 
-label {
-    display: inline-block;
-    font-size: 20px;
-    color: #6B3EB8;
-    margin-bottom: 0;
-}
-
-.botaobuscar {
+.botao {
     padding: 0 10%;
     margin: 1em;
 }

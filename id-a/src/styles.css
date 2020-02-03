@@ -1,9 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/*body*/
 
 @import "./Styles/css/bootstrap.min.css";
 body {
     margin-top: 11%;
 }
+
+
+/*scrollbar*/
 
 ::-webkit-scrollbar-track {
     background-color: #F4F4F4;
@@ -21,6 +24,9 @@ body {
     border-radius: 22px
 }
 
+
+/*botões*/
+
 .botaobuscar {
     border-radius: 30px;
     border: 1px solid #7006BC;
@@ -31,12 +37,8 @@ body {
 .botaobuscar:hover {
     border-radius: 30px;
     border-color: #7006BC;
-    color: aliceblue;
+    color: white;
     background-color: #7006BC;
-}
-
-strong {
-    color: orange;
 }
 
 .botaobuscarbranco {
@@ -60,4 +62,44 @@ strong {
     background-color: #c583f3;
     box-shadow: none;
     border: #7006BC 1px solid
+}
+
+
+/*texto*/
+
+strong {
+    color: orange;
+}
+
+
+/*input*/
+
+input {
+    border: none;
+    border-bottom: #6B3EB8 2px solid;
+    font-size: 20px;
+    color: orange;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    border-radius: 0px;
+}
+
+label {
+    display: inline-block;
+    font-size: 25px;
+    color: #6B3EB8;
+    margin-bottom: 0;
+}
+
+textarea {
+    width: 90%;
+    vertical-align: top;
+    border: #6B3EB8 2px solid;
+    font-size: 20px;
+    color: orange;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1em;
+    height: 200px;
 }

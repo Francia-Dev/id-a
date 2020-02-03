@@ -1,7 +1,6 @@
 .conteudo {
     width: 80%;
     margin: 0 auto;
-
 }
 
 .formulario {
@@ -12,7 +11,7 @@
     display: inline-block;
     padding: 3em;
     border: gray solid 1px;
-    margin: 3em 0;  
+    margin: 3em 0;
     font-size: 21px;
     text-align: center;
 }
@@ -36,22 +35,20 @@ input {
 
 .botaobuscar {
     width: 50%;
-    
 }
-
 
 label {
     color: #6B3EB8;
     font-size: 25px;
 }
 
-#erroEmail, #erroSenha {
+#erroEmail,
+#erroSenha {
     text-align: right;
     font-size: 18px;
     margin: 5px 20%;
     color: rgb(189, 4, 4);
-    font-weight: bold;    
-
+    font-weight: bold;
 }
 
 .formulario p {

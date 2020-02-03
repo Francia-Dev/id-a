@@ -12,6 +12,7 @@
 .navbar {
     border-bottom: #7006BC solid 3px;
     height: 80px;
+    background-color: white
 }
 
 #navlogo {
@@ -92,7 +93,7 @@ strong {
 
 .collapse.show,
 .collapsing {
-    background-color: #f8f9fa;
+    background-color: white;
     text-align: left;
 }
 
