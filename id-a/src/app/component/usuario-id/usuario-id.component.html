@@ -1,1 +1,35 @@
-<p>usuario-id works!</p>
+<div>
+    <label for="idUsuario">Busca por Id</label>
+    <input type="text" id="id" [(ngModel)]="id" (keyup)="btnClick()"
+    placeholder="Id">
+    <button id="btnPost" (click)="btnClick()">Buscar</button>
+    <br><br>
+    <br>
+    <div *ngIf="id != null; else elseBlock">
+        <div class="ttl"></div>
+            <div>Usuario: {{usuario.nome}}</div>
+            <div class="content">Telefone: {{usuario.telefone}} </div>
+            <div class="numero">Email: {{usuario.email}} </div>
+            <br>
+            <p *ngIf="usuario.comentario != null">Comentaios:</p>
+            <div *ngFor="let item of usuario?.comentario">
+                <div>Comentario: {{item.texto}}</div>
+                <div>Postagem: {{item.post?.titulo}}</div>  
+            </div>
+            <br>
+            <p *ngIf="usuario.comunidade != null">Comunidades:</p>
+            <div *ngFor="let item of usuario?.comunidade">
+                <div>Nome: {{item.nome}}</div>
+                <div>Categoria: {{item.categoria?.nome}}</div>
+            </div>
+            <br>
+            <p *ngIf="usuario.post != null">Postagens:</p>
+            <div *ngFor="let item of usuario?.post">
+                <div>Título: {{item?.titulo}}</div>
+        </div>
+    </div>
+        <ng-template #elseBlock>
+            <h3>Informe o Id para continuar...</h3>
+            <img src="./../../../assets/pesquisa.gif">   
+        </ng-template>
+</div>

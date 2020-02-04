@@ -32,6 +32,7 @@ import { CategoriaIdComponent } from './component/categoria/categoria-id/categor
 import { CategoriaInsertComponent } from './component/categoria/categoria-insert/categoria-insert.component';
 import { CategoriaUpdateComponent } from './component/categoria/categoria-update/categoria-update.component';
 import { CategoriaDeleteComponent } from './component/categoria/categoria-delete/categoria-delete.component';
+import { UsuarioNomeComponent } from './component/usuario-nome/usuario-nome.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,7 @@ const routes: Routes = [
   {path: 'usuarioId', component: UsuarioIdComponent},
   {path: 'usuarioUpdate', component: UsuarioUpdateComponent},
   {path: 'usuarioDelete', component: UsuarioDeleteComponent},
+  {path: 'usuarioNome', component: UsuarioNomeComponent},
 
   {path: 'comunidadeAll', component: ComunidadeListComponent},
   {path: 'comunidadeId', component: ComunidadeIdComponent},

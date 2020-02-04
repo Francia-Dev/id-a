@@ -1,6 +1,6 @@
 <div>
     <div *ngFor="let item of usuario">
-        <p>{{item.nome}}</p>
+        <p>Nome: {{item.nome}}</p>
         <p *ngIf="item.post != null">Quantidade de projetos: {{item.post.length}}</p>
     </div>
 </div>

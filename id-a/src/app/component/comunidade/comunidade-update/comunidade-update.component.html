@@ -1,1 +1,24 @@
-<p>comunidade-update works!</p>
+<div>
+    <h1>Atualizar Comunidade</h1>
+    <div>
+        <div>
+            <label for="comunidadeId">Insira o ID da Comunidade</label>
+            <input type="number" id="comunidadeId" [(ngModel)]="comunidade.idComunidade">
+        </div>
+        <div>
+            <label for="comunidadeNome">Insira o novo nome</label>
+            <input type="text" id="comunidadeNome" [(ngModel)]="comunidade.nome">
+        </div>
+        <div>
+            <label for="comunidadeIdUsuario">Insira o ID do usuario</label>
+            <input type="number" id="comunidadeIdUsuario" [(ngModel)]="comunidade.usuario.idUsuario">
+        </div>
+        <div>
+            <label for="comunidadeIdCategoria">Insira o ID da categoria</label>
+            <input type="number" id="comunidadeIdCategoria" [(ngModel)]="comunidade.categoria.idCategoria">
+        </div>
+    </div>
+    <div>
+        <button id="comunidadeBotao" class="botaobuscar" (click)="alterar()">Editar Comunidade</button>
+    </div>
+</div>

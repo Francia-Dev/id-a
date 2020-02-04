@@ -1,1 +1,17 @@
-<p>categoria-insert works!</p>
+<div>
+    <h1>Adicionar nova Categoria</h1>
+    <div>
+        <div>
+            <label for="categoriaNome">Nome</label>
+            <input type="text" id="categoriaNome" [(ngModel)]="categoria.nome">
+        </div>
+        <div>
+            <label for="categoriaDescricao">Descrição</label>
+            <input type="text" id="categoriaDescricao" [(ngModel)]="categoria.descricao">
+        </div>
+
+        <div>
+            <button id="postBotao" (click)="inserir()">Criar</button>
+        </div>
+    </div>
+</div>

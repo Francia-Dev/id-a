@@ -19,7 +19,6 @@ export class PostUpdateComponent implements OnInit {
   }
 
   alterar(){
-    
     if (this.post.idPostagem != 0){
       this.postService.update(this.post).subscribe((postOut: Post) =>{
       this.post = postOut;
@@ -32,23 +31,23 @@ export class PostUpdateComponent implements OnInit {
     
   }
 
-  keyUp(){
-    if (this.post.idPostagem == 0) {
-      document.getElementById("erroId").style.visibility = "visible";
-    } else {
-      document.getElementById("erroId").style.visibility = "hidden";
-      this.postService.getById(this.post.idPostagem).subscribe((postOut: Post) =>{
-      this.post = postOut;
-      console.log(this.post);
-      if (this.post == null){
-        alert(`Id não encontrado`);
-        this.router.navigate(['/postAll']);
-      }
-      }, err =>{
-        alert(`Id não encontrado`);
-        this.router.navigate(['/postAll']);
+  // keyUp(){
+  //   if (this.post.idPostagem == 0) {
+  //     document.getElementById("erroId").style.visibility = "visible";
+  //   } else {
+  //     document.getElementById("erroId").style.visibility = "hidden";
+  //     this.postService.getById(this.post.idPostagem).subscribe((postOut: Post) =>{
+  //     this.post = postOut;
+  //     console.log(this.post);
+  //     if (this.post == null){
+  //       alert(`Id não encontrado`);
+  //       this.router.navigate(['/postAll']);
+  //     }
+  //     }, err =>{
+  //       alert(`Id não encontrado`);
+  //       this.router.navigate(['/postAll']);
       
-      })
-    }
-  }
+  //     })
+  //   }
+  // }
 }

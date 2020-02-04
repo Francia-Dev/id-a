@@ -1,0 +1,35 @@
+<div>
+    <label for="nomeUsuario">Busca por Nome</label>
+    <input type="text" id="nomeUsuario" placeholder="Id" [(ngModel)]="nomeUsuario">
+    <button id="btnPost" (click)="btnClickNome()">Buscar</button>
+    
+    <br><br>
+    <br>
+    <div *ngIf="nomeUsuario != null; else elseBlock">
+        <div class="ttl" *ngFor="let item of usuarios">
+            <div>Usuario: {{item?.nome}}</div>
+            <div class="content">Telefone: {{item?.telefone}} </div>
+            <div class="numero">Email: {{item?.email}} </div>
+            <br>
+            <p *ngIf="item.comentario != null">Comentaios:</p>
+            <div *ngFor="let item of item?.comentario">
+                <div>Comentario: {{item.texto}}</div>
+                <div>Postagem: {{item.post?.titulo}}</div>  
+            </div>
+            <br>
+            <p *ngIf="item.comunidade != null">Comunidades:</p>
+            <div *ngFor="let item of item?.comunidade">
+                <div>Nome: {{item.nome}}</div>
+                <div>Categoria: {{item.categoria?.nome}}</div>
+            </div>
+            <br>
+            <p *ngIf="item.post != null">Postagens:</p>
+            <div *ngFor="let item of item?.post">
+                <div>Título: {{item?.titulo}}</div>
+        </div>
+    </div>
+        <ng-template #elseBlock>
+            <h3>Informe o nome para continuar...</h3>
+            <img src="./../../../assets/pesquisa.gif">   
+        </ng-template>
+</div>

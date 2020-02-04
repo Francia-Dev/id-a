@@ -1,1 +1,21 @@
-<p>categoria-update works!</p>
+<div>
+    <h1>Atualizar Categoria</h1>
+    <div>
+        <div>
+            <label for="idCategoria">Id</label>
+            <input type="number" id="idCategoria" [(ngModel)]="categoria.idCategoria">
+        </div>
+        <div>
+            <label for="nomeCategoria">Novo nome</label>
+            <input type="text" id="nomeCategoria" [(ngModel)]="categoria.nome">
+        </div>
+        <div>
+            <label for="descricaoCategoria">Nova descrição</label>
+            <input type="text" id="descricaoCategoria" [(ngModel)]="categoria.descricao">
+        </div>
+
+        <div>
+            <button id="categoriaBotao" class="botaobuscar" (click)="alterar()">Editar Categoria</button>
+        </div>
+    </div>
+</div>

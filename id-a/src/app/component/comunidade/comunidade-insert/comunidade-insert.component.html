@@ -1,1 +1,22 @@
-<p>comunidade-insert works!</p>
+<div>
+    <h1>Criar Comunidade</h1>
+    <div>
+        <div>
+            <label for="comunidadeNome">Nome da comunidade</label>
+            <input type="text" id="comunidadeNome" [(ngModel)]="comunidade.nome">
+
+        </div>
+        <div>
+            <label for="comunidadeIdUsuario">Insira seu ID</label>
+            <input type="text" id="comunidadeIdUsuario" [(ngModel)]="comunidade.usuario.idUsuario">
+
+        </div>
+        <div>
+            <label for="comunidadeIdCategoria">Insira o ID da Categoria</label>
+            <input type="text" id="comunidadeIdCategoria" [(ngModel)]="comunidade.categoria.idCategoria">
+        </div>
+        <div>
+            <button id="postBotao" (click)="inserir()">Criar</button>
+        </div>
+    </div>
+</div>

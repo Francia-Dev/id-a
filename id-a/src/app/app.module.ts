@@ -42,6 +42,7 @@ import { PostDeleteComponent } from './component/post-delete/post-delete.compone
 import { UsuarioIdComponent } from './component/usuario-id/usuario-id.component';
 import { UsuarioDeleteComponent } from './component/usuario-delete/usuario-delete.component';
 import { UsuarioUpdateComponent } from './component/usuario-update/usuario-update.component';
+import { UsuarioNomeComponent } from './component/usuario-nome/usuario-nome.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { UsuarioUpdateComponent } from './component/usuario-update/usuario-updat
     PostDeleteComponent,
     UsuarioIdComponent,
     UsuarioDeleteComponent,
-    UsuarioUpdateComponent
+    UsuarioUpdateComponent,
+    UsuarioNomeComponent
     
   ],
   imports: [

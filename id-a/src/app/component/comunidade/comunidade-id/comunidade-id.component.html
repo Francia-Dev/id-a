@@ -1,1 +1,20 @@
-<p>comunidade-id works!</p>
+<div>
+<input id="txtComunidade" type="text" [(ngModel)]="id" (keyup)="btnClick()"
+        placeholder="Id" />
+    <button id="btnPost" (click)="btnClick()">Buscar</button>
+    <br><br>
+    <div *ngIf="id != null; else elseBlock">
+        <div>Nome: {{comunidade.nome}}</div>
+        <div *ngIf="comunidade.usuario != null">Usuário criador: {{comunidade?.usuario?.nome}}</div>
+        <p *ngIf="comunidade.post != null">Postagens:</p>
+        <div *ngFor="let item of comunidade?.post">
+            <div>Titulo: {{item.titulo}}</div>
+        </div>
+        <br>
+        <div *ngIf="comunidade.categoria != null">Categoria: {{comunidade?.categoria?.nome}}</div>
+    </div>
+    <ng-template #elseBlock>
+        <h3>Informe o Id para continuar...</h3>
+        <img src="./../../../assets/pesquisa.gif">   
+    </ng-template>
+</div>

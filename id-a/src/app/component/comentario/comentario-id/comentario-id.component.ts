@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComentarioService } from 'src/app/service/comentario/comentario.service';
+import { Comentario } from 'src/app/model/comentario';
 
 @Component({
   selector: 'app-comentario-id',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComentarioIdComponent implements OnInit {
 
-  constructor() { }
+  comentario: Comentario = new Comentario(0,"",null,null)
+  id:number;
+  
+  constructor(private comentarioService: ComentarioService) { }
 
   ngOnInit() {
   }
-
+  btnClick(){
+    this.comentarioService.getById(this.id).subscribe((comentarioOut: Comentario) => {
+      this.comentario = comentarioOut;
+    })
+  }
 }
