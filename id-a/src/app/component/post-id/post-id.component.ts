@@ -9,7 +9,7 @@ import { Post } from 'src/app/model/post';
 })
 export class PostIdComponent implements OnInit {
 
-  post: Post = new Post(0,"","","","");
+  post: Post = new Post(0,"","","","", null, null, null);
   id: number;
 
   constructor(private postService: PostService) { }

@@ -20,6 +20,10 @@ export class PostService {
     return this.http.post("http://localhost:8080/post", post)
   }
 
+  delete(id: number){
+    return this.http.delete(`http://localhost:8080/post/${id}`);
+  }
+
   update(post: Post){
     return this.http.put("http://localhost:8080/post", post)
   }

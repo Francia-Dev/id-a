@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostInsertComponent implements OnInit {
 
-  post: Post = new Post(0,"","","","");
+  post: Post = new Post(0,"","","","", null, null, null);
 
   constructor(private postService: PostService, private router: Router) { }
 

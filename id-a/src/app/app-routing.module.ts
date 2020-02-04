@@ -13,6 +13,25 @@ import { HomeusuarioComponent } from './component/homeusuario/homeusuario.compon
 import { AjudaComponent } from './component/ajuda/ajuda.component';
 import { PostUpdateComponent } from './component/post-update/post-update.component';
 import { PostInsertComponent } from './component/post-insert/post-insert.component';
+import { PostDeleteComponent } from './component/post-delete/post-delete.component';
+import { UsuarioIdComponent } from './component/usuario-id/usuario-id.component';
+import { UsuarioUpdateComponent } from './component/usuario-update/usuario-update.component';
+import { UsuarioDeleteComponent } from './component/usuario-delete/usuario-delete.component';
+import { ComunidadeListComponent } from './component/comunidade/comunidade-list/comunidade-list.component';
+import { ComunidadeIdComponent } from './component/comunidade/comunidade-id/comunidade-id.component';
+import { ComunidadeInsertComponent } from './component/comunidade/comunidade-insert/comunidade-insert.component';
+import { ComunidadeUpdateComponent } from './component/comunidade/comunidade-update/comunidade-update.component';
+import { ComunidadeDeleteComponent } from './component/comunidade/comunidade-delete/comunidade-delete.component';
+import { ComentarioListComponent } from './component/comentario/comentario-list/comentario-list.component';
+import { ComentarioIdComponent } from './component/comentario/comentario-id/comentario-id.component';
+import { ComentarioInsertComponent } from './component/comentario/comentario-insert/comentario-insert.component';
+import { ComentarioUpdateComponent } from './component/comentario/comentario-update/comentario-update.component';
+import { ComentarioDeleteComponent } from './component/comentario/comentario-delete/comentario-delete.component';
+import { CategoriaListComponent } from './component/categoria/categoria-list/categoria-list.component';
+import { CategoriaIdComponent } from './component/categoria/categoria-id/categoria-id.component';
+import { CategoriaInsertComponent } from './component/categoria/categoria-insert/categoria-insert.component';
+import { CategoriaUpdateComponent } from './component/categoria/categoria-update/categoria-update.component';
+import { CategoriaDeleteComponent } from './component/categoria/categoria-delete/categoria-delete.component';
 
 
 const routes: Routes = [
@@ -20,16 +39,40 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'contato', component: ContatoComponent},
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'ajuda', component: AjudaComponent},
+
+  {path: 'postUpdate', component: PostUpdateComponent},
+  {path: 'postInsert', component: PostInsertComponent},
+  {path: 'postDelete', component: PostDeleteComponent},
   {path: 'postId', component: PostIdComponent},
   {path: 'postAll', component: PostListComponent},
-  {path: 'cadastro', component: CadastroComponent},
-  {path: 'usuarios', component: UsuariosListaComponent},
-  {path: 'novoUsuario', component: UsuariosNovoComponent},
-  {path: 'login', component: LoginComponent},
+
   {path: 'homeusuario', component: HomeusuarioComponent},
-  {path: 'ajuda', component: AjudaComponent},
-  {path: 'postUpdate', component: PostUpdateComponent},
-  {path: 'postInsert', component: PostInsertComponent}
+  //{path: 'novoUsuario', component: UsuariosNovoComponent},
+  {path: 'usuarioAll', component: UsuariosListaComponent},
+  {path: 'usuarioId', component: UsuarioIdComponent},
+  {path: 'usuarioUpdate', component: UsuarioUpdateComponent},
+  {path: 'usuarioDelete', component: UsuarioDeleteComponent},
+
+  {path: 'comunidadeAll', component: ComunidadeListComponent},
+  {path: 'comunidadeId', component: ComunidadeIdComponent},
+  {path: 'comunidadeInsert', component: ComunidadeInsertComponent},
+  {path: 'comunidadeUpdate', component: ComunidadeUpdateComponent},
+  {path: 'comunidadeDelete', component: ComunidadeDeleteComponent},
+
+  {path: 'comentarioAll', component: ComentarioListComponent},
+  {path: 'comentarioId', component: ComentarioIdComponent},
+  {path: 'comentarioInsert', component: ComentarioInsertComponent},
+  {path: 'comentarioUpdate', component: ComentarioUpdateComponent},
+  {path: 'comentarioDelete', component: ComentarioDeleteComponent},
+
+  {path: 'categoriaAll', component: CategoriaListComponent},
+  {path: 'categoriaId', component: CategoriaIdComponent},
+  {path: 'categoriaInsert', component: CategoriaInsertComponent},
+  {path: 'categoriaUpdate', component: CategoriaUpdateComponent},
+  {path: 'categoriaDelete', component: CategoriaDeleteComponent}
 ];
 
 @NgModule({

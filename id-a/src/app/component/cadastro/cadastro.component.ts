@@ -12,7 +12,7 @@ import { Alert } from 'selenium-webdriver';
 })
 export class CadastroComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0, "", "", "", "", null, null, null);
   senhaConfirm: string;
   usuarios = []
   find: boolean;
@@ -80,10 +80,15 @@ export class CadastroComponent implements OnInit {
     this.usuarioService.getAll().subscribe((usuarioOut: Usuario[]) => {
       this.usuarios = usuarioOut;
 
+      this.validarAtualizacao();
       
     }, err =>{
       console.log(`Erro cod:  ${err.status}`);
     })
+    
+  }
+
+  private validarAtualizacao(){
     this.find = false
     this.usuarios.forEach(element => {
       if (element.nome == this.usuario.nome){

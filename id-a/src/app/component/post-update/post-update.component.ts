@@ -10,7 +10,7 @@ import { PostService } from 'src/app/service/post.service';
 })
 export class PostUpdateComponent implements OnInit {
 
-  post: Post = new Post(0,"","","","");
+  post: Post = new Post(0,"","","","", null, null, null);
   id: number;
 
   constructor(private postService: PostService, private router: Router) { }

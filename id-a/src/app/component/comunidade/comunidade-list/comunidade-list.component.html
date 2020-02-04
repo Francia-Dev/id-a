@@ -1,0 +1,8 @@
+<div>
+    <div *ngFor="let item of comunidade">
+        <p>Id comunidade: {{item.idComunidade}}</p>
+        <p>Nome: {{item.nome}}</p>
+        <p>Criador da Comunidade: {{item.usuario?.nome}}</p>
+        <p>Categoria: {{item.categoria?.nome}}</p>
+    </div>
+</div>

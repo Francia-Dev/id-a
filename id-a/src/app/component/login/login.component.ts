@@ -13,7 +13,7 @@ import { Globals } from 'src/app/model/globals';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario = new Usuario(0, "", "", "", "");
+  usuario: Usuario = new Usuario(0, "", "", "", "", null, null, null);
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
