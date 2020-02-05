@@ -4,11 +4,13 @@ import { Usuario } from 'src/app/model/usuario';
 import { Categoria } from 'src/app/model/categoria';
 import { ComunidadeService } from 'src/app/service/comunidade/comunidade.service';
 import { Router } from '@angular/router';
+import { Globals } from 'src/app/model/globals';
 
 @Component({
   selector: 'app-comunidade-update',
   templateUrl: './comunidade-update.component.html',
-  styleUrls: ['./comunidade-update.component.css']
+  styleUrls: ['./comunidade-update.component.css'],
+  providers: [ Globals ]
 })
 export class ComunidadeUpdateComponent implements OnInit {
 
@@ -17,6 +19,7 @@ export class ComunidadeUpdateComponent implements OnInit {
   constructor(private comunidadeService: ComunidadeService, private router: Router) { }
 
   ngOnInit() {
+    this.comunidade.usuario.idUsuario = Globals.USUARIO.idUsuario;
   }
 
   alterar(){

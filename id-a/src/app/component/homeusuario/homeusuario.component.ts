@@ -16,13 +16,19 @@ export class HomeusuarioComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    let idUsuario: number;
+    idUsuario = parseInt(localStorage.getItem("usuarioId"));
+    if(idUsuario){
+      let usuario = new Usuario(0, "", "", "", "", null, null, null)
+      Globals.USUARIO = usuario;
+      Globals.USUARIO.idUsuario = idUsuario;
+      Globals.USUARIO.nome = localStorage.getItem("usuarioNome");
+    }
     if (Globals.USUARIO == undefined){
       this.router.navigate(['/login']);
-      }
-      else{
+      } else{
       this.usuario = Globals.USUARIO;
       
       }
   }
-
 }

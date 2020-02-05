@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit() {
+    let idUsuario: number;
+    idUsuario = parseInt(localStorage.getItem("usuarioId"));
+    if(idUsuario){
+      this.router.navigate(['/homeusuario'])
+    }
   }
 
   verificar() {
@@ -34,6 +39,9 @@ export class LoginComponent implements OnInit {
       this.usuarioService.verificar(this.usuario).subscribe((usuarioOut: Usuario) => {
         this.usuario = usuarioOut;
         Globals.USUARIO = usuarioOut;
+
+        localStorage.setItem("usuarioId", String(Globals.USUARIO.idUsuario));
+        localStorage.setItem("usuarioNome", String(Globals.USUARIO.nome));
         alert("Usuário existente");
         this.router.navigate(['/homeusuario']);
       }, err =>{

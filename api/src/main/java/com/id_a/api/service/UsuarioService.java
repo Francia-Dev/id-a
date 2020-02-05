@@ -16,4 +16,6 @@ public interface UsuarioService {
 	void delete(int id);
 	
 	List<Usuario> getAllByNome(String nome);
+	
+	Usuario getUsuarioByEmailAndSenha(String email, String senha);
 }

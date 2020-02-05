@@ -4,11 +4,13 @@ import { Usuario } from 'src/app/model/usuario';
 import { Post } from 'src/app/model/post';
 import { ComentarioService } from 'src/app/service/comentario/comentario.service';
 import { Router } from '@angular/router';
+import { Globals } from 'src/app/model/globals';
 
 @Component({
   selector: 'app-comentario-update',
   templateUrl: './comentario-update.component.html',
-  styleUrls: ['./comentario-update.component.css']
+  styleUrls: ['./comentario-update.component.css'],
+  providers: [ Globals ]
 })
 export class ComentarioUpdateComponent implements OnInit {
 
@@ -17,6 +19,7 @@ export class ComentarioUpdateComponent implements OnInit {
   constructor(private comentarioService: ComentarioService, private router: Router) { }
 
   ngOnInit() {
+    this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
   }
 
   alterar(){

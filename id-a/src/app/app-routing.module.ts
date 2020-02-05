@@ -50,31 +50,44 @@ const routes: Routes = [
   {path: 'postId', component: PostIdComponent},
   {path: 'postAll', component: PostListComponent},
 
-  {path: 'homeusuario', component: HomeusuarioComponent},
+  
   //{path: 'novoUsuario', component: UsuariosNovoComponent},
-  {path: 'usuarioAll', component: UsuariosListaComponent},
-  {path: 'usuarioId', component: UsuarioIdComponent},
-  {path: 'usuarioUpdate', component: UsuarioUpdateComponent},
-  {path: 'usuarioDelete', component: UsuarioDeleteComponent},
-  {path: 'usuarioNome', component: UsuarioNomeComponent},
+  
+  {path: 'homeusuario', component: HomeusuarioComponent, 
+    children: [
+      {path: '', component: PostListComponent},
+      {path: 'postUpdate', component: PostUpdateComponent},
+      {path: 'postInsert', component: PostInsertComponent},
+      {path: 'postDelete', component: PostDeleteComponent},
+      {path: 'postId', component: PostIdComponent},
+      {path: 'postAll', component: PostListComponent},
+    
+      {path: 'usuarioAll', component: UsuariosListaComponent},
+      {path: 'usuarioId', component: UsuarioIdComponent},
+      {path: 'usuarioUpdate', component: UsuarioUpdateComponent},
+      {path: 'usuarioDelete', component: UsuarioDeleteComponent},
+      {path: 'usuarioNome', component: UsuarioNomeComponent},
 
-  {path: 'comunidadeAll', component: ComunidadeListComponent},
-  {path: 'comunidadeId', component: ComunidadeIdComponent},
-  {path: 'comunidadeInsert', component: ComunidadeInsertComponent},
-  {path: 'comunidadeUpdate', component: ComunidadeUpdateComponent},
-  {path: 'comunidadeDelete', component: ComunidadeDeleteComponent},
+      {path: 'comunidadeAll', component: ComunidadeListComponent},
+      {path: 'comunidadeId', component: ComunidadeIdComponent},
+      {path: 'comunidadeInsert', component: ComunidadeInsertComponent},
+      {path: 'comunidadeUpdate', component: ComunidadeUpdateComponent},
+      {path: 'comunidadeDelete', component: ComunidadeDeleteComponent},
 
-  {path: 'comentarioAll', component: ComentarioListComponent},
-  {path: 'comentarioId', component: ComentarioIdComponent},
-  {path: 'comentarioInsert', component: ComentarioInsertComponent},
-  {path: 'comentarioUpdate', component: ComentarioUpdateComponent},
-  {path: 'comentarioDelete', component: ComentarioDeleteComponent},
+      {path: 'comentarioAll', component: ComentarioListComponent},
+      {path: 'comentarioId', component: ComentarioIdComponent},
+      {path: 'comentarioInsert', component: ComentarioInsertComponent},
+      {path: 'comentarioUpdate', component: ComentarioUpdateComponent},
+      {path: 'comentarioDelete', component: ComentarioDeleteComponent},
 
-  {path: 'categoriaAll', component: CategoriaListComponent},
-  {path: 'categoriaId', component: CategoriaIdComponent},
-  {path: 'categoriaInsert', component: CategoriaInsertComponent},
-  {path: 'categoriaUpdate', component: CategoriaUpdateComponent},
-  {path: 'categoriaDelete', component: CategoriaDeleteComponent}
+      {path: 'categoriaAll', component: CategoriaListComponent},
+      {path: 'categoriaId', component: CategoriaIdComponent},
+      {path: 'categoriaInsert', component: CategoriaInsertComponent},
+      {path: 'categoriaUpdate', component: CategoriaUpdateComponent},
+      {path: 'categoriaDelete', component: CategoriaDeleteComponent}
+    ]}
+
+  
 ];
 
 @NgModule({

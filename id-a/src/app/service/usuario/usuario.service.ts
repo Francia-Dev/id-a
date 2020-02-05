@@ -29,7 +29,7 @@ export class UsuarioService {
       return this.http.get(`http://localhost:8080/usuario/nome/${nome}`);
     }
     verificar(usuario: Usuario){
-      return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login", usuario);
+      return this.http.post("http://localhost:8080/usuario/login", usuario);
     }
 }
 

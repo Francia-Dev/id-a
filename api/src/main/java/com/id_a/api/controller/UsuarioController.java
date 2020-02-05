@@ -73,4 +73,12 @@ public class UsuarioController {
 	public ResponseEntity<List<Usuario>> getAllByName(@PathVariable String nome){
 		return ResponseEntity.ok(this.service.getAllByNome(nome));
 	}
+	
+	@PostMapping("/usuario/login")
+	public ResponseEntity<Usuario> getUsuarioByEmailAndSenha(@RequestBody Usuario entity){
+		Usuario usuario = this.service.getUsuarioByEmailAndSenha(entity.getEmail(), entity.getSenha());
+		if(usuario == null)
+			return ResponseEntity.notFound().build();
+		return ResponseEntity.ok(usuario);
+	}
 }

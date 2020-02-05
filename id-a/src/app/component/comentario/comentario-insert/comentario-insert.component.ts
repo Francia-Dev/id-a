@@ -4,11 +4,13 @@ import { ComentarioService } from 'src/app/service/comentario/comentario.service
 import { Comentario } from 'src/app/model/comentario';
 import { Usuario } from 'src/app/model/usuario';
 import { Post } from 'src/app/model/post';
+import { Globals } from 'src/app/model/globals';
 
 @Component({
   selector: 'app-comentario-insert',
   templateUrl: './comentario-insert.component.html',
-  styleUrls: ['./comentario-insert.component.css']
+  styleUrls: ['./comentario-insert.component.css'],
+  providers: [ Globals ]
 })
 export class ComentarioInsertComponent implements OnInit {
 
@@ -17,6 +19,7 @@ export class ComentarioInsertComponent implements OnInit {
   constructor(private comentarioService: ComentarioService, private router: Router) { }
 
   ngOnInit() {
+    this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
   }
   inserir(){
     if (this.comentario.texto != "" && this.comentario.usuario.idUsuario != 0 && this.comentario.post.idPostagem != 0){

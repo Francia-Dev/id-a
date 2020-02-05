@@ -39,4 +39,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 	public List<Usuario> getAllByNome(String nome) {
 		return this.repository.findAllByNome(nome);
 	}
+
+	@Override
+	public Usuario getUsuarioByEmailAndSenha(String email, String senha) {
+		Usuario usuario = this.repository.findUsuarioByEmailAndSenha(email, senha);
+		return usuario;
+	}
 }
