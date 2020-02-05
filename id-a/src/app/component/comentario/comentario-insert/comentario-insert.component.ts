@@ -26,7 +26,7 @@ export class ComentarioInsertComponent implements OnInit {
       this.comentarioService.insert(this.comentario).subscribe((comentarioOut: Comentario) =>{
         this.comentario = comentarioOut;
         alert("Comentario inserido com sucesso");
-        this.router.navigate(['/comentarioAll']);
+        this.router.navigate(['/homeusuario/comentarioAll']);
       
     })
     }

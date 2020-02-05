@@ -23,7 +23,7 @@ export class PostInsertComponent implements OnInit {
         this.post = postOut;
         console.log(this.post);
         alert("Mensagem postada com sucesso");
-        this.router.navigate(['/postAll']);
+        this.router.navigate(['/homeusuario/postAll']);
       })
     }
   }
@@ -31,5 +31,4 @@ export class PostInsertComponent implements OnInit {
   previa(){
     document.getElementById("previewImagem").innerHTML = `<img src='${this.post.linkimg}' style='max-width:100%;'>`;
   }
-
 }

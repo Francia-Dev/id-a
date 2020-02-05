@@ -1,1 +1,11 @@
-<p>comentario-delete works!</p>
+<div>
+        <input id="txtComunidade" type="text" [(ngModel)]="id" placeholder="Id" />
+            <button id="btnPost" (click)="btnClick()">Deletar</button>
+            <br><br>
+            <div *ngIf="id != null; else elseBlock">
+            </div>
+            <ng-template #elseBlock>
+                <h3>Informe o Id para continuar...</h3>
+                <img src="./../../../assets/pesquisa.gif">   
+            </ng-template>
+</div>

@@ -85,6 +85,10 @@ input {
     border-radius: 0px;
 }
 
+input:focus{
+    outline: none
+}
+
 label {
     display: inline-block;
     font-size: 25px;

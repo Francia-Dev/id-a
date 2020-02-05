@@ -30,7 +30,7 @@ export class ComunidadeUpdateComponent implements OnInit {
         this.router.navigate(['/comunidadeAll']);
       },err =>{
         alert(`Id não encontrado`);
-        this.router.navigate(['/comunidadeAll']);
+        this.router.navigate(['/homeusuario/comunidadeAll']);
       })
     }
   }

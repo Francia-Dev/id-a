@@ -33,7 +33,7 @@ export class ComentarioUpdateComponent implements OnInit {
     }
     else {
       alert(`Id não encontrado`);
-      this.router.navigate(['/comentarioAll']);
+      this.router.navigate(['/homeusuario/comentarioAll']);
 
     }
   }

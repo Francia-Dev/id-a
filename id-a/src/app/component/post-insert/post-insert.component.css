@@ -45,6 +45,7 @@ input {
 
 #previewImagem {
     min-height: 50%;
+    overflow: hidden;
 }
 
 h1 {

@@ -1,24 +1,37 @@
 <div class="all" style="text-align: center">
-    <hr><br>
     <div *ngIf="post != null">
-        <div class="conteudo" *ngFor="let item of post.slice().reverse()">
-            <div class="numero" *ngIf="post != null">
-                <p>{{item.idPostagem}} de {{post.length}}</p>
+        <div class="conteudo row" *ngFor="let item of post.slice().reverse(); let i = index">
+            <div class="card col-8">
+                <img class="card-img" src="{{item?.linkimg}}" />
+
+                <div class="card-body">
+                    <div class="numero" *ngIf="post != null">
+                        <p>{{item?.idPostagem}}</p>
+
+                    </div>
+                    <div class="card-title">
+                        {{item?.titulo}}
+                        {{item?.usuario?.nome}}
+                        <p>{{item.dataInclusao}}</p>
+                    </div>
+                    <div class="content">
+                        {{item.texto}}
+                    </div>
+                </div>
             </div>
-            <div class="ttl">
-                {{item.titulo}}
-                {{item?.usuario.nome}}
-                <p>{{item.dataInclusao}}</p>
+                <div class="col-4">
+                    <div class="comentarios">
+                <div *ngFor="let item of item.comentario">
+                    <div class="card">
+                        <p class="nomeComentario">{{item.usuario?.nome}}</p>
+                        <p class="corpoComentario">{{item?.texto}}</p>
+                    </div>
+                </div></div>
+                <div class="novocomentario">
+                    <input type="text" [(ngModel)]="novoComentario" class="textocomentario" placeholder="Comentar..." />
+                    <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario(item?.idPostagem)">Comentar</button>
+                </div>
             </div>
-            <img class="postimg" src="{{item.linkimg}}" />
-            <div class="content">
-                {{item.texto}}
-            </div>
-            <div *ngFor="let item of item.comentario">
-                <p>{{item.usuario?.nome}}</p>
-                <p>{{item.texto}}</p>
-            </div>
-            <div></div>
         </div>
     </div>
 </div>

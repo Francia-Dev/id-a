@@ -12,10 +12,11 @@ import { Router } from '@angular/router';
 export class HomeusuarioComponent implements OnInit {
 
   usuario: Usuario
-
+  adm: Boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
     let idUsuario: number;
     idUsuario = parseInt(localStorage.getItem("usuarioId"));
     if(idUsuario){

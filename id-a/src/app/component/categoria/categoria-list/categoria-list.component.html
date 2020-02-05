@@ -1,7 +1,18 @@
-<div>
+<!-- <div>
     <div *ngFor="let item of categoria">
         <p>Nome: {{item.nome}}</p>
         <p>Id: {{item.idCategoria}}</p>
         <p>Descrição: {{item.descricao}}</p>
     </div>
-</div>
+</div> -->
+
+<div class="conteudo">
+        <div class="card" *ngFor="let item of categoria">
+            <div class="card-img-top"> <img src="./../../../../assets/construindo.jpg" alt=""></div>
+            <div class="card-body">
+                <p class="card-title">Nome: {{item.nome}}</p>
+                <p>Id: {{item.idCategoria}}</p>
+                <p class="card-text">Descrição: {{item.descricao}}</p>
+            </div>
+        </div>
+    </div>

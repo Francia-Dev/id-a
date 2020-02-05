@@ -22,7 +22,7 @@ export class CategoriaInsertComponent implements OnInit {
       this.categoriaService.insert(this.categoria).subscribe((categoriaOut: Categoria) => {
         this.categoria = categoriaOut;
         alert("Categoria criada com sucesso");
-        this.router.navigate(['/categoriaAll'])
+        this.router.navigate(['/homeusuario/categoriaAll'])
       });
     }
   }

@@ -27,7 +27,7 @@ export class CategoriaUpdateComponent implements OnInit {
         this.router.navigate(['/categoriaAll'])
       }, err => {
         alert(`Id não encontrado`);
-        this.router.navigate(['/categoriaAll']);
+        this.router.navigate(['/homeusuario/categoriaAll']);
       });
     }
   }

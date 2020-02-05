@@ -1,1 +1,21 @@
-<p>usuario-update works!</p>
+<div>
+        <h1>Atualizar Usuario</h1>
+        <div>
+            <div class="col-2 formPost">
+                <label for="usuarioId">Id <strong style="color:brown; display: inline-block;" id="erroId">*</strong></label>
+                <input type="text" id="usuarioId" [(ngModel)]="usuario.idUsuario">
+            </div>
+            <div class="col-3 formPost">
+                <label for="postData">Nome</label>
+                <input type="text" id="postData" [(ngModel)]="usuario.nome">
+            </div>
+            <div class="col-3 formPost">
+                <label for="postLinkimg">Telefone</label>
+                <input type="text" id="postLinkimg" [(ngModel)]="usuario.telefone">
+            </div>
+            
+            <div>
+                <button id="postBotao" class="botaobuscar" (click)="alterar()">Editar Usuario</button>
+            </div>
+        </div>
+</div>

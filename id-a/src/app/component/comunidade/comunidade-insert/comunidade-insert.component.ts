@@ -26,7 +26,7 @@ export class ComunidadeInsertComponent implements OnInit {
         this.comunidadeService.insert(this.comunidade).subscribe((comunidadeOut:Comunidade) => {
           this.comunidade = comunidadeOut
           alert("Comunidade criada com sucesso!")
-          this.router.navigate(['/comunidadeAll']);
+          this.router.navigate(['/homeusuario/comunidadeAll']);
         });
       }
     }

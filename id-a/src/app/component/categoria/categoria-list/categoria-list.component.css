@@ -1,0 +1,17 @@
+.card {
+    display: inline-block;
+    height: 20rem;
+    width: 21%;
+    margin: 2%;
+    vertical-align: top;
+    padding: 1%
+}
+
+.card img {
+    width: 100%;
+}
+
+.conteudo {
+    width: 80%;
+    margin: 0 auto
+}
