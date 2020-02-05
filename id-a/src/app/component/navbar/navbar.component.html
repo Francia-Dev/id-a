@@ -1,13 +1,52 @@
-<img id="navlogo" aria-expanded="true" class="show" src="./../../../assets/Logao.png" alt="logo">
-<nav class="navbar navbar-expand-xl navbar-light barra">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <div class="row" style="width: 100%; margin: 0 auto;">
-                <div class="col-6 separador">
-                    <a class="nav-link " [routerLink]="'/home'" style="margin-left: 0">Home <span class="sr-only">(current)</span></a>
+<!-- <img id="navlogo" aria-expanded="true" class="show" src="./../../../assets/Logao.png" alt="logo"> -->
+<div class="navTudo">
+    <nav class="navbar navbar-expand-xl barra">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand"><img src="./../../../assets/logoSimples.png" class="nav-link"></a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-item dropdown" style="display: inline-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projetos
+          </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item " [routerLink]="'/postUpdate'">Atualizar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postId'">Buscar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postAll'">Mostrar todos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="'/postInsert'">Novo</a>
+                        </div></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/sobre'">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/ajuda'">Ajuda</a>
+                </li>
+                <li class="logCad">
+                    <a class="nav-link" [routerLink]="'/login'">Login</a><strong>/</strong>
+                    <a [routerLink]="'/cadastro'" class="cadastro">Junte-se a nós</a>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </nav>
+</div>
+<!-- <a class="nav-link " [routerLink]="'/home'" >Home <span class="sr-only">(current)</span></a>
 
                     <div class="nav-item dropdown" style="display: inline-block">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,25 +67,7 @@
 
 
 
-                </div>
-
-
-
-                <div class="col-6 separador" style="text-align: end">
 
                     <a class="nav-link" [routerLink]="'/contato'">Contato</a>
 
-                    <a class="nav-link" [routerLink]="'/ajuda'">Ajuda</a>
-
-
-                    <div class="logCad">
-                        <a class="nav-link" [routerLink]="'/login'">Login</a><strong>/</strong>
-                        <a [routerLink]="'/cadastro'" class="cadastro">Junte-se a nós</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-</nav>
+                    <a class="nav-link" [routerLink]="'/ajuda'">Ajuda</a> -->

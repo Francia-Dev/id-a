@@ -3,16 +3,34 @@
     margin: 1rem;
     padding: .5rem 0 !important;
     display: inline-block;
+    color: #c583f3;
+    
 }
 
-.nav-brand {
-    height: auto;
+
+img{
+    width: 6rem;
+    padding: 1rem;
+    display: inline-block;
+    
+}
+
+.navbar-brand {
+    margin-right: 0;
+    margin-right: 1rem;
+}
+
+.navTudo{
+    background-color: #7006BC;
 }
 
 .navbar {
     border-bottom: #7006BC solid 3px;
-    height: 80px;
-    background-color: white
+    height: 3.5rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #7006BC;
+    
 }
 
 #navlogo {
@@ -48,7 +66,7 @@
 
 strong {
     font-weight: normal;
-    color: rgb(0, 0, 0, .5)
+    color: #c583f3;
 }
 
 .logCad a {
@@ -83,7 +101,8 @@ strong {
 
 .cadastro {
     font-size: 25px;
-    color: #7006BC
+    color: white;
+    border-radius: 100px;
 }
 
 .cadastro:hover {

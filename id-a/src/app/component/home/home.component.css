@@ -5,7 +5,6 @@ h1 {
 }
 
 .bemVindo {
-    margin: 0 auto 2em;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     background-color: #7006BC;
 }
@@ -76,8 +75,62 @@ h3 {
     background-color: orange
 }
 
-.carousel-inner,
+.carousel-inner{
+    height: 20%;
+}
+
 .porOndeComecar {
     width: 85%;
     margin: 0 auto 2em;
+    
+}
+
+#ThumbnailCarousel img {
+width: 100%;
+}
+
+#ThumbnailCarousel div {
+    width:100%;
+}
+
+#ThumbnailCarousel.carousel {
+    padding-top:30px;
+    text-align:center;
+}
+
+#ThumbnailCarousel .carousel-control-prev:hover,
+#ThumbnailCarousel .carousel-control-next:hover{
+    background-color: transparent;
+    cursor: pointer;
+}
+#ThumbnailCarousel .carousel-control-prev,
+#ThumbnailCarousel .carousel-control-next{
+    width: 4%;
+    margin:6% ;
+    height: 20%;
+}
+
+#ThumbnailCarousel p{
+    vertical-align: middle;
+}
+
+#ThumbnailCarousel .carousel-inner {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.botoesControle{
+position: absolute;
+color: black;
+font-size: 40px;
+
+}
+
+.botoesControle:hover{
+    background-color: none;
+    color: orange
+}
+
+.row {
+    margin: 0;
 }
