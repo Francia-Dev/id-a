@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { Globals } from 'src/app/model/globals';
 
@@ -13,7 +13,7 @@ export class UsuarioUpdateComponent implements OnInit {
 
   usuario: Usuario = new Usuario(0, "", "", "", "", null, null, null)
   id: number;
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router,  private route: ActivatedRoute) { }
 
   ngOnInit() {
     let idUsuario: number;
@@ -29,6 +29,14 @@ export class UsuarioUpdateComponent implements OnInit {
       } else{
       this.usuario = Globals.USUARIO;
       }
+      let id:number = this.route.snapshot.params["id"];
+    this.id= id
+    this.usuarioService.getById(id).subscribe((usuarioOut: Usuario) =>{
+     this.usuario.telefone = usuarioOut.telefone;
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/']);
+    })
   }
   alterar(){
     if (this.usuario.idUsuario != 0){

@@ -17,8 +17,9 @@
                     <div class="content">
                         {{item.texto}}
                     </div>
-                </div>
+                </div>     
             </div>
+            
                 <div class="col-4">
                     <div class="comentarios">
                 <div *ngFor="let item of item.comentario">
@@ -32,6 +33,11 @@
                     <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario(item?.idPostagem)">Comentar</button>
                 </div>
             </div>
+            
+                            <div class="botoesAlteracoes">
+                                    <button class="col-6" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]">Alterar</button>
+                                    <button class="col-6" [routerLink]="['homeusuario/postDelete', item?.idPostagem]">Deletar</button>
+                            </div>
         </div>
     </div>
 </div>
