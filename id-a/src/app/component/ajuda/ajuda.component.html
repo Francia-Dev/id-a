@@ -1,7 +1,7 @@
 <div class="content">
 
-    <div class="row">
-        <div class="col-4">
+    <div class="row contorno">
+        <div class="col-4 perguntas">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-resp1" role="tab" aria-controls="v-pills-home" aria-selected="true">O que é a Id.A?</a>
                 <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-resp2" role="tab" aria-controls="v-pills-profile" aria-selected="false">Como faço para criar uma conta no id.a?</a>
@@ -20,7 +20,7 @@
                 <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-resp14" role="tab" aria-controls="v-pills-settings" aria-selected="false">Guia para iniciantes.</a>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-8 respostas">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-resp1" role="tabpanel" aria-labelledby="v-pills-home-tab">Somos uma empresa que visa a criação de projetos a partir da cooperação e compartilhamento de habilidades.</div>
                 <div class="tab-pane fade" id="v-pills-resp2" role="tabpanel" aria-labelledby="v-pills-profile-tab">1. Vá até a aba de Cadastro<br> 2. Preencha as informações requeridas<br> 3. Clique em cadastrar<br> 4. Acesse seu email para confirmação de cadastro.<br><br> *Caso você não receba o email de confirmação de cadastro, entre em contato conosco:
@@ -66,27 +66,46 @@
     </div>
 
 
-    <div>
-        <h1>Não encontrou resposta para seu problema? Envie sua dúvida para nós.</h1>
-        <div class="formulario">
-            <div>
-                <label for="duvidaNome">Nome:</label>
-                <input type="text" [(ngModel)]="nome" id="duvidaNome">
+
+
+
+    <div id="accordion">
+        <div class="card formPergunta">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Não encontrou resposta para seu problema? Nos pergunte.
+                  </button>
+                </h5>
             </div>
 
-            <div>
-                <label for="duvidaEmail">Email:</label>
-                <input type="text" [(ngModel)]="email" id="duvidaEmail">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="formulario">
+                        <div class="informacao">
+                            <label for="duvidaNome"></label>
+                            <input type="text" [(ngModel)]="nome" id="duvidaNome" placeholder="Nome Completo">
 
-                <div>
-                    <label for="duvidaTexto">Sua dúvida:</label>
-                    <input type="text" [(ngModel)]="texto" id="duvidaTexto">
+                            <label for="duvidaEmail"></label>
+                            <input type="text" [(ngModel)]="email" id="duvidaEmail" placeholder="Email">
+
+                        </div>
+                        <div class="texto">
+                            <label for="duvidaTexto"></label>
+                            <textarea [(ngModel)]="texto" id="duvidaTexto" placeholder="Dúvida"></textarea>
+                        </div>
+                        <div>
+                            <div *ngIf="erroNome || erroEmail || erroTexto" class="erro">⚠ Por favor preencha todos os campos corretamente </div>
+                            <button (click)="enviar()" class="botaobuscar botao">Enviar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div *ngIf="erroNome || erroEmail || erroTexto" class="erro">⚠ Por favor preencha todos os campos corretamente </div>
-                <button (click)="enviar()" class="botaobuscar botao">Enviar</button>
-            </div>
+
+
+
+
+
 
         </div>
 
