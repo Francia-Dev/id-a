@@ -60,6 +60,7 @@ const routes: Routes = [
       {path: 'postInsert', component: PostInsertComponent},
       {path: 'postDelete', component: PostDeleteComponent},
       {path: 'postId', component: PostIdComponent},
+      {path: 'homeusuario/postId/:id', component: PostIdComponent},
       {path: 'postAll', component: PostListComponent},
     
       {path: 'usuarioAll', component: UsuariosListaComponent},

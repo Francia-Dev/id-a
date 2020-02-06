@@ -27,6 +27,9 @@ public class ComunidadeController {
 	@PostMapping("/comunidade")
 	public ResponseEntity<Comunidade> post(@RequestBody Comunidade entity){
 		try {
+			if(entity.getIdComunidade() != 0) {
+				return ResponseEntity.badRequest().body(null);
+			}
 			Comunidade comunidade = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(comunidade);
 		} catch (Exception e) {
@@ -37,6 +40,10 @@ public class ComunidadeController {
 	@PutMapping("/comunidade")
 	public ResponseEntity<Comunidade> put(@RequestBody Comunidade entity){
 		try {
+			Comunidade comunidadeAchada = this.service.getById(entity.getIdComunidade());
+			if(comunidadeAchada == null) {
+				return ResponseEntity.notFound().build();
+			}
 			Comunidade comunidade = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(comunidade);
 		} catch (Exception e) {
@@ -45,15 +52,8 @@ public class ComunidadeController {
 	}
 	
 	@DeleteMapping("/comunidade/{id}")
-	public ResponseEntity<String> delete(@PathVariable int id){
-		if(this.service.getById(id) == null) 
-			return ResponseEntity.notFound().build();
-		try {
+	public void delete(@PathVariable int id){
 			this.service.delete(id);
-			return ResponseEntity.ok("Removido com sucesso.");
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 	
 	@GetMapping("/comunidade")

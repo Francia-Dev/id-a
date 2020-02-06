@@ -27,6 +27,9 @@ export class ComunidadeInsertComponent implements OnInit {
           this.comunidade = comunidadeOut
           alert("Comunidade criada com sucesso!")
           this.router.navigate(['/homeusuario/comunidadeAll']);
+        }, err => {
+          alert(`Erro ao criar`);
+          this.router.navigate(['homeusuario/comunidadeAll']);
         });
       }
     }

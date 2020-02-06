@@ -26,6 +26,9 @@ public class CategoriaController {
 	@PostMapping("/categoria")
 	public ResponseEntity<Categoria> post(@RequestBody Categoria entity){
 		try {
+			if(entity.getIdCategoria() != 0) {
+				return ResponseEntity.badRequest().body(null);
+			}
 			Categoria categoria = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(categoria);
 		} catch (Exception e) {
@@ -36,6 +39,10 @@ public class CategoriaController {
 	@PutMapping("/categoria")
 	public ResponseEntity<Categoria> put(@RequestBody Categoria entity){
 		try {
+			Categoria categoriaAchada = this.service.getById(entity.getIdCategoria());
+			if(categoriaAchada == null) {
+				return ResponseEntity.notFound().build();
+			}
 			Categoria categoria = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(categoria);
 		} catch (Exception e) {
@@ -44,15 +51,8 @@ public class CategoriaController {
 	}
 	
 	@DeleteMapping("/categoria/{id}")
-	public ResponseEntity<String> delete(@PathVariable int id){
-		if(this.service.getById(id) == null) 
-			return ResponseEntity.notFound().build();
-		try {
+	public void delete(@PathVariable int id){
 			this.service.delete(id);
-			return ResponseEntity.ok("Removido com sucesso.");
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 	
 	@GetMapping("/categoria")

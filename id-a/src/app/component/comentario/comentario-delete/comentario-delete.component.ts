@@ -23,11 +23,15 @@ export class ComentarioDeleteComponent implements OnInit {
   btnClick(){
     this.comentarioService.delete(this.id).subscribe((mensagemOut: String) => {
       this.mensagem = mensagemOut;
+      alert("Comentario Deletado");
+      this.mudarpag();
       
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/categoriaAll']);
     })
 
-    alert("Comentario Deletado");
-      this.mudarpag();
+    
   }
 
   mudarpag(){

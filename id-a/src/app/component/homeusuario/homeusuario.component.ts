@@ -32,4 +32,9 @@ export class HomeusuarioComponent implements OnInit {
       
       }
   }
+
+  sair(){
+    localStorage.clear();
+    this.router.navigate(['/home']);
+  }
 }

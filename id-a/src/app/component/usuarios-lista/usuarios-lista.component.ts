@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/service/usuario/usuario.service';
 import { Usuario } from 'src/app/model/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios-lista',
@@ -9,7 +10,7 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class UsuariosListaComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   usuario: Usuario[];
 
@@ -20,6 +21,9 @@ export class UsuariosListaComponent implements OnInit {
   findAll(){
     this.usuarioService.getAll().subscribe((usuarioOut: Usuario[]) => {
       this.usuario = usuarioOut;
+    }, err => {
+      alert(`Erro ao buscar`);
+      this.router.navigate(['homeusuario']);
     })
   }
 }

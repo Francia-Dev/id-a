@@ -28,12 +28,15 @@ export class ComentarioUpdateComponent implements OnInit {
       this.comentarioService.update(this.comentario).subscribe((comentarioOut: Comentario) =>{
       this.comentario = comentarioOut;
       alert("Comentario atualizado com sucesso!");
-      this.router.navigate(['/comentarioAll']);
+      this.router.navigate(['homeusuario/comentarioAll']);
+      }, err => {
+        alert(`Id não encontrado`);
+        this.router.navigate(['homeusuario/comentarioAll']);
       })
     }
     else {
-      alert(`Id não encontrado`);
-      this.router.navigate(['/homeusuario/comentarioAll']);
+      alert(`Inserir id`);
+      this.router.navigate(['homeusuario/comentarioAll']);
 
     }
   }

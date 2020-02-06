@@ -5,6 +5,7 @@ import { ComentarioService } from 'src/app/service/comentario/comentario.service
 import { Comentario } from 'src/app/model/comentario';
 import { Usuario } from 'src/app/model/usuario';
 import { Globals } from 'src/app/model/globals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -14,7 +15,7 @@ import { Globals } from 'src/app/model/globals';
 })
 export class PostListComponent implements OnInit {
 
-  constructor(private postService: PostService, private comentarioService: ComentarioService) { }
+  constructor(private postService: PostService, private comentarioService: ComentarioService, private router: Router) { }
 
   post: Post[];
   comentario: Comentario = new Comentario(0, "", new Usuario(0, "", "", "", "", null, null, null), new Post(0, "", "", "", "", null, null, null));
@@ -24,23 +25,29 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.findAll();
-  
+    this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
   }
 
     findAll(){
       this.postService.getAll().subscribe((postOut: Post[]) => {
         this.post = postOut;
+      }, err => {
+        alert(`Erro ao buscar`);
+        this.router.navigate(['homeusuario']);
       })
     }
 
     enviarComentario(id: number){
+      this.comentario.idComentario == 0;
       this.comentario.texto = this.novoComentario;
       this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
       this.comentario.post.idPostagem = id;
-      console.log(this.comentario)
       this.comentarioService.insert(this.comentario).subscribe((comentarioOut: Comentario) =>{
-        this.comentario = comentarioOut;
+        
         this.findAll();
+      }, err => {
+        alert(`Erro ao criar comentario`);
       });
     }
+    
 }

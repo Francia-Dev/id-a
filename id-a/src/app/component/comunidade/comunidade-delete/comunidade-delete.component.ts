@@ -21,11 +21,15 @@ export class ComunidadeDeleteComponent implements OnInit {
   btnClick(){
     this.comunidadeService.delete(this.id).subscribe((mensagemOut: String) => {
       this.mensagem = mensagemOut;
-      
+      alert("Comunidade Deletada");
+      this.mudarpag();
+
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/comunidadeAll']);
     })
 
-    alert("Comunidade Deletada");
-      this.mudarpag();
+    
   }
 
   mudarpag(){

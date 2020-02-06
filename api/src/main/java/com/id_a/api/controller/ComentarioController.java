@@ -27,6 +27,9 @@ public class ComentarioController {
 	@PostMapping("/comentario")
 	public ResponseEntity<Comentario> post(@RequestBody Comentario entity){
 		try {
+			if(entity.getIdComentario() != 0) {
+				return ResponseEntity.badRequest().body(null);
+			}
 			Comentario comentario = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(comentario);
 		} catch (Exception e) {
@@ -37,6 +40,10 @@ public class ComentarioController {
 	@PutMapping("/comentario")
 	public ResponseEntity<Comentario> put(@RequestBody Comentario entity){
 		try {
+			Comentario comentarioAchado = this.service.getById(entity.getIdComentario());
+			if(comentarioAchado == null) {
+				return ResponseEntity.notFound().build();
+			}
 			Comentario comentario = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(comentario);
 		} catch (Exception e) {
@@ -45,15 +52,8 @@ public class ComentarioController {
 	}
 	
 	@DeleteMapping("/comentario/{id}")
-	public ResponseEntity<String> delete(@PathVariable int id){
-		if(this.service.getById(id) == null) 
-			return ResponseEntity.notFound().build();
-		try {
+	public void delete(@PathVariable int id){
 			this.service.delete(id);
-			return ResponseEntity.ok("Removido com sucesso.");
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 	
 	@GetMapping("/comentario")

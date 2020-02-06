@@ -9,6 +9,9 @@
 
                 {{ usuario?.nome }} logado com sucesso
             </div>
+            <div>
+                <button (click)="sair()">Sair</button>
+            </div>
             <hr />
         </div>
 
@@ -27,7 +30,7 @@
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <ul>
-                            <li><a [routerLink]="'postAll'">Todas</a></li>
+                            <li><a [routerLink]="'/homeusuario'">Todas</a></li>
                             <li><a [routerLink]="'postId'">Busca</a></li>
                             <li><a [routerLink]="'postInsert'">Nova</a></li>
                             <li><a [routerLink]="'postUpdate'">Alteração</a></li>

@@ -21,13 +21,18 @@ export class ComentarioInsertComponent implements OnInit {
   ngOnInit() {
     this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
   }
+  
   inserir(){
     if (this.comentario.texto != "" && this.comentario.usuario.idUsuario != 0 && this.comentario.post.idPostagem != 0){
+      console.log(this.comentario);
       this.comentarioService.insert(this.comentario).subscribe((comentarioOut: Comentario) =>{
         this.comentario = comentarioOut;
         alert("Comentario inserido com sucesso");
-        this.router.navigate(['/homeusuario/comentarioAll']);
+        this.router.navigate(['homeusuario/comentarioAll']);
       
+    }, err => {
+      alert(`Erro ao criar`);
+      this.router.navigate(['homeusuario/comentarioAll']);
     })
     }
  }

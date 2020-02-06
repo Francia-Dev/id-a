@@ -27,6 +27,9 @@ public class PostController {
 	@PostMapping("/post")
 	public ResponseEntity<Post> post(@RequestBody Post entity){
 		try {
+			if(entity.getIdPostagem() != 0) {
+				return ResponseEntity.badRequest().body(null);
+			}
 			Post post = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(post);
 		} catch (Exception e) {
@@ -37,6 +40,10 @@ public class PostController {
 	@PutMapping("/post")
 	public ResponseEntity<Post> put(@RequestBody Post entity){
 		try {
+			Post postAchado = this.service.getById(entity.getIdPostagem());
+			if(postAchado == null) {
+				return ResponseEntity.notFound().build();
+			}
 			Post post = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(post);
 		} catch (Exception e) {
@@ -45,15 +52,8 @@ public class PostController {
 	}
 	
 	@DeleteMapping("/post/{id}")
-	public ResponseEntity<String> delete(@PathVariable int id){
-		if(this.service.getById(id) == null) 
-			return ResponseEntity.notFound().build();
-		try {
+	public void delete(@PathVariable int id){
 			this.service.delete(id);
-			return ResponseEntity.ok("Removido com sucesso.");
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 	
 	@GetMapping("/post")
@@ -71,6 +71,9 @@ public class PostController {
 	
 	@GetMapping("/post/palavra/{palavra}")
 	public ResponseEntity<List<Post>> getAllByPalavra(@PathVariable String palavra){
-		return ResponseEntity.ok(this.service.findAllByTituloContaining(palavra));
+		List<Post> post = this.service.findAllByTituloContaining(palavra);
+		if(post.size() == 0) 
+			return ResponseEntity.notFound().build();
+		return ResponseEntity.ok(post);
 	}
 }

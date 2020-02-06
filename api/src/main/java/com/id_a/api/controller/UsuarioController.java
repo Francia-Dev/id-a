@@ -27,6 +27,9 @@ public class UsuarioController {
 	@PostMapping("/usuario")
 	public ResponseEntity<Usuario> post(@RequestBody Usuario entity){
 		try {
+			if(entity.getIdUsuario() != 0) {
+				return ResponseEntity.badRequest().body(null);
+			}
 			Usuario usuario = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(usuario);
 		} catch (Exception e) {
@@ -37,6 +40,10 @@ public class UsuarioController {
 	@PutMapping("/usuario")
 	public ResponseEntity<Usuario> put(@RequestBody Usuario entity){
 		try {
+			Usuario usuarioAchado = this.service.getById(entity.getIdUsuario());
+			if(usuarioAchado == null) {
+				return ResponseEntity.notFound().build();
+			}
 			Usuario usuario = this.service.createOrUpdate(entity);
 			return ResponseEntity.ok(usuario);
 		} catch (Exception e) {
@@ -45,15 +52,8 @@ public class UsuarioController {
 	}
 	
 	@DeleteMapping("/usuario/{id}")
-	public ResponseEntity<String> delete(@PathVariable int id){
-		if(this.service.getById(id) == null) 
-			return ResponseEntity.notFound().build();
-		try {
+	public void delete(@PathVariable int id){
 			this.service.delete(id);
-			return ResponseEntity.ok("Removido com sucesso.");
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 	
 	@GetMapping("/usuario")
@@ -71,7 +71,10 @@ public class UsuarioController {
 	
 	@GetMapping("/usuario/nome/{nome}")
 	public ResponseEntity<List<Usuario>> getAllByName(@PathVariable String nome){
-		return ResponseEntity.ok(this.service.getAllByNome(nome));
+		List<Usuario> usuario = this.service.getAllByNome(nome);
+		if(usuario.size() == 0)
+			return ResponseEntity.notFound().build();
+		return ResponseEntity.ok(usuario);
 	}
 	
 	@PostMapping("/usuario/login")

@@ -1,7 +1,7 @@
 <div class="all" style="text-align: center">
     <div *ngIf="post != null">
         <div class="conteudo row" *ngFor="let item of post.slice().reverse(); let i = index">
-            <div class="card col-8">
+            <div class="card col-8" [routerLink]="['homeusuario/postId', item?.idPostagem]">
                 <img class="card-img" src="{{item?.linkimg}}" />
 
                 <div class="card-body">

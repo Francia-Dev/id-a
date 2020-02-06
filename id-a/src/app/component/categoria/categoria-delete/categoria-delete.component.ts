@@ -21,11 +21,13 @@ export class CategoriaDeleteComponent implements OnInit {
   btnClick(){
     this.categoriaService.delete(this.id).subscribe((mensagemOut: String) => {
       this.mensagem = mensagemOut;
-      
-    })
-
-    alert("Categoria Deletada");
+      alert("Categoria Deletada");
       this.mudarpag();
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/categoriaAll']);
+    });
+
   }
 
   mudarpag(){

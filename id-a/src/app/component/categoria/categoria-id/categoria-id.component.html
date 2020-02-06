@@ -1,6 +1,6 @@
 
 <div>
-    <input type="text" [(ngModel)]="id" (keyup) = "btnClick()" placeholder="Id">
+    <input type="text" [(ngModel)]="id" placeholder="Id">
     <button id="btnPost" (click)="btnClick()">Buscar</button>
     <br><br>
     <div *ngIf="id != null; else elseBlock">

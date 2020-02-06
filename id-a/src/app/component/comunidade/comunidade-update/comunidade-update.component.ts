@@ -27,7 +27,7 @@ export class ComunidadeUpdateComponent implements OnInit {
         this.comunidadeService.update(this.comunidade).subscribe((comunidadeOut: Comunidade) => {
         this.comunidade = comunidadeOut;
         alert("Comunidade atualizada com sucesso!")
-        this.router.navigate(['/comunidadeAll']);
+        this.router.navigate(['/homeusuario/comunidadeAll']);
       },err =>{
         alert(`Id não encontrado`);
         this.router.navigate(['/homeusuario/comunidadeAll']);

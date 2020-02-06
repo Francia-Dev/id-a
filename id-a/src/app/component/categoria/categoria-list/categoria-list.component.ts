@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'src/app/service/categoria/categoria.service';
 import { Categoria } from 'src/app/model/categoria';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-list',
@@ -9,7 +10,7 @@ import { Categoria } from 'src/app/model/categoria';
 })
 export class CategoriaListComponent implements OnInit {
 
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(private categoriaService: CategoriaService, private router: Router) { }
 
   categoria: Categoria[];
 
@@ -20,6 +21,9 @@ export class CategoriaListComponent implements OnInit {
   findAll() {
     this.categoriaService.getAll().subscribe((categoriaOut: Categoria[]) => {
       this.categoria = categoriaOut;
+    }, err => {
+      alert(`Erro ao carregar`);
+      this.router.navigate(['homeusuario']);
     });
   }
 

@@ -18,13 +18,15 @@ export class UsuarioDeleteComponent implements OnInit {
   ngOnInit() {
   }
   btnClick(){
-    this.usuarioService.delete(this.id).subscribe((mensagemOut: String) => {
-      this.mensagem = mensagemOut;
+    this.usuarioService.delete(this.id).subscribe(() => {
+    alert("Usuario Deletado");
+    this.mudarpag();
       
+    }, err => {
+      alert(`Erro ao apagar usuario`);
+      this.router.navigate(['/homeusuario/usuarioAll']);
     })
 
-    alert("Usuario Deletado");
-      this.mudarpag();
   }
 
   mudarpag(){

@@ -21,11 +21,15 @@ export class PostDeleteComponent implements OnInit {
   btnClick(){
     this.postService.delete(this.id).subscribe((mensagemOut: String) => {
       this.mensagem = mensagemOut;
-      
+      alert("Postagem Deletada");
+      this.mudarpag();
+
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/postAll']);
     })
 
-    alert("Postagem Deletada");
-      this.mudarpag();
+    
   }
 
   mudarpag(){

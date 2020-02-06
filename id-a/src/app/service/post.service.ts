@@ -16,6 +16,10 @@ export class PostService {
     return this.http.get(`http://localhost:8080/post/${id}`)
   }
 
+  getByPalavra(palavra: string){
+    return this.http.get(`http://localhost:8080/post/palavra/${palavra}`)
+  }
+
   insert(post: Post){
     return this.http.post("http://localhost:8080/post", post)
   }
@@ -27,4 +31,5 @@ export class PostService {
   update(post: Post){
     return this.http.put("http://localhost:8080/post", post)
   }
+
 }

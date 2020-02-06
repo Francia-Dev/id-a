@@ -24,10 +24,10 @@ export class CategoriaUpdateComponent implements OnInit {
         this.categoria = categoriaOut;
 
         alert("Categoria alterada com sucesso!");
-        this.router.navigate(['/categoriaAll'])
+        this.router.navigate(['homeusuario/categoriaAll'])
       }, err => {
         alert(`Id não encontrado`);
-        this.router.navigate(['/homeusuario/categoriaAll']);
+        this.router.navigate(['homeusuario/categoriaAll']);
       });
     }
   }

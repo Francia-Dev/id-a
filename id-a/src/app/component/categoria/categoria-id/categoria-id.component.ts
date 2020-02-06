@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'src/app/service/categoria/categoria.service';
 import { Categoria } from 'src/app/model/categoria';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-id',
@@ -12,7 +13,7 @@ export class CategoriaIdComponent implements OnInit {
   id: number;
   categoria: Categoria = new Categoria(0,"","",null)
   
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(private categoriaService: CategoriaService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,9 @@ export class CategoriaIdComponent implements OnInit {
   btnClick() {
     this.categoriaService.getById(this.id).subscribe((categoriaOut: Categoria) =>{
       this.categoria = categoriaOut;
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/categoriaAll']);
     })
   }
 }

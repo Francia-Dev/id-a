@@ -57,23 +57,22 @@ export class CadastroComponent implements OnInit {
   private validarCadastro() {
     this.find = false;
     this.usuarios.forEach(element => {
-      if (element.nome == this.usuario.nome) {
+      if (element.email == this.usuario.email) {
         document.getElementById("statusLogin").style.visibility = "visible";
-        alert("Nome de usuário em uso, escolha outro ou efetue o login");
-        this.router.navigate(['/login']);
         this.find = true;
       }
-
-
-      if (this.find == false) {
-        this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
-          this.usuario = usuario;
-          document.getElementById("statusLogin").style.visibility = "hidden";
-          alert("Usuario cadastrado com sucesso");
-          this.router.navigate(['/login']);
-        });
-      }
     });
+    if (this.find == false) {
+      this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) => {
+        this.usuario = usuario;
+        document.getElementById("statusLogin").style.visibility = "hidden";
+        alert("Usuario cadastrado com sucesso");
+        this.router.navigate(['/login']);
+      });
+    } else {
+        alert("Email em uso, escolha outro ou efetue o login");
+        this.router.navigate(['/login']);
+    }
   }
 
   atualizar(){
@@ -91,20 +90,25 @@ export class CadastroComponent implements OnInit {
   private validarAtualizacao(){
     this.find = false
     this.usuarios.forEach(element => {
-      if (element.nome == this.usuario.nome){
+      if (element.email == this.usuario.email){
         this.usuario.idUsuario = element.idUsuario
         this.usuarioService.update(this.usuario).subscribe((usuario: Usuario) => {
           this.usuario = usuario
           
+        }, err => {
+          alert(`Erro ao atualizar usuario`);
         })
         document.getElementById("statusLogin").style.visibility = "visible";
-        document.getElementById("statusLogin").innerText = "Usuario atualizado com sucesso"
+        alert("Usuario alterado com sucesso");
+        this.router.navigate(['/login']);
         this.find = true;
-      } else if (this.find == false){
-        document.getElementById("statusLogin").style.visibility = "visible";
-        document.getElementById("statusLogin").innerText = "Usuario não encontrado"
       }
     });
+    if (this.find == false){
+      document.getElementById("statusLogin").style.visibility = "visible";
+      alert("Usuario não encontrado");
+      document.getElementById("statusLogin").innerText = "Usuario não encontrado"
+    }
   }
 }
 

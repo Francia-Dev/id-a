@@ -23,6 +23,9 @@ export class CategoriaInsertComponent implements OnInit {
         this.categoria = categoriaOut;
         alert("Categoria criada com sucesso");
         this.router.navigate(['/homeusuario/categoriaAll'])
+      }, err => {
+        alert(`Erro ao criar`);
+        this.router.navigate(['homeusuario/categoriaAll']);
       });
     }
   }
