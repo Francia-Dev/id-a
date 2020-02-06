@@ -1,18 +1,20 @@
 .nav-link {
-    font-size: 25px;
+    font-size: 22px;
     margin: 1rem;
     padding: .5rem 0 !important;
     display: inline-block;
-    color: #c583f3;
-    
+    color: #e2b8ff;
 }
 
+.nav-link:hover {
+    transform: translate(0, -5px);
+    transition-duration: 0.5s;
+}
 
-img{
+img {
     width: 6rem;
     padding: 1rem;
     display: inline-block;
-    
 }
 
 .navbar-brand {
@@ -20,7 +22,7 @@ img{
     margin-right: 1rem;
 }
 
-.navTudo{
+.navTudo {
     background-color: #7006BC;
 }
 
@@ -30,7 +32,6 @@ img{
     width: 90%;
     margin: 0 auto;
     background-color: #7006BC;
-    
 }
 
 #navlogo {
@@ -49,7 +50,7 @@ img{
 
 .logCad {
     margin: auto 0;
-    font-size: 25px;
+    font-size: 22px;
     color: rgb(0, 0, 0, .5);
     padding: .5rem 0;
     display: inline-block
@@ -86,7 +87,7 @@ strong {
     .nav-link:hover,
     .nav-item:hover,
     .logCad a:hover {
-        cursor: pointer
+        cursor: pointer;
     }
     .logCad a {
         margin-bottom: .5rem
@@ -100,7 +101,7 @@ strong {
 }
 
 .cadastro {
-    font-size: 25px;
+    font-size: 22px;
     color: white;
     border-radius: 100px;
 }

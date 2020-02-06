@@ -1,15 +1,12 @@
-
 img {
     width: 20%;
     background-color: #2c2c2c;
     height: 20%;
     overflow: hidden;
-    
 }
 
 .content {
     font-size: 30px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
     padding: 1rem 0;
 }
 
@@ -28,16 +25,16 @@ img {
     background-color: #ffffff
 }
 
-.comentarios{
+.comentarios {
     overflow: auto;
     height: 14rem;
 }
 
-.novocomentario{
+.novocomentario {
     vertical-align: bottom;
 }
 
-.textocomentario{
+.textocomentario {
     margin-bottom: 1rem;
     margin-top: 2rem
 }
