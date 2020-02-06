@@ -1,7 +1,12 @@
 <div>
     <div *ngFor="let item of usuario">
         <div class="card">
-        <p class="card-title">Nome: {{item.nome}}</p>
-        <p *ngIf="item.post != null">Quantidade de projetos: {{item.post.length}}</p>
-    </div></div>
+            <p class="card-title">Nome: {{item.nome}}</p>
+            <p *ngIf="item.post != null">Quantidade de projetos: {{item.post.length}}</p>
+        </div>
+        <div class="botoesAlteracoes">
+            <button class="col-6" [routerLink]="['/homeusuario/usuarioUpdate', item.idUsuario]">Alterar</button>
+            <button class="col-6" [routerLink]="['/homeusuario/usuarioDelete', item.idUsuario]">Deletar</button>
+        </div>
+    </div>
 </div>

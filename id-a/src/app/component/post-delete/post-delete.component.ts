@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/model/post';
 import { PostService } from 'src/app/service/post.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-delete',
@@ -13,9 +13,17 @@ export class PostDeleteComponent implements OnInit {
   post: Post = new Post(0,"","","","", null, null, null);
   id: number;
   mensagem: String
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private postService: PostService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    let id:number = this.route.snapshot.params["id"];
+    this.id= id
+    this.postService.getById(id).subscribe((postOut: Post) =>{
+      this.post = postOut;
+    }, err => {
+      alert(`Id não encontrado`);
+      this.router.navigate(['homeusuario/']);
+    })
   }
 
   btnClick(){
@@ -26,13 +34,13 @@ export class PostDeleteComponent implements OnInit {
 
     }, err => {
       alert(`Id não encontrado`);
-      this.router.navigate(['homeusuario/postAll']);
+      this.router.navigate(['homeusuario/']);
     })
 
     
   }
 
   mudarpag(){
-    this.router.navigate(['/homeusuario/postAll']);
+    this.router.navigate(['/homeusuario/']);
   }
 }
