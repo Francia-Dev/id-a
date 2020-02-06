@@ -57,8 +57,10 @@ const routes: Routes = [
     children: [
       {path: '', component: PostListComponent},
       {path: 'postUpdate', component: PostUpdateComponent},
+      {path: 'homeusuario/postUpdate/:id', component: PostUpdateComponent},
       {path: 'postInsert', component: PostInsertComponent},
       {path: 'postDelete', component: PostDeleteComponent},
+      {path: 'homeusuario/postDelete/:id', component: PostDeleteComponent},
       {path: 'postId', component: PostIdComponent},
       {path: 'homeusuario/postId/:id', component: PostIdComponent},
       {path: 'postAll', component: PostListComponent},
@@ -66,26 +68,34 @@ const routes: Routes = [
       {path: 'usuarioAll', component: UsuariosListaComponent},
       {path: 'usuarioId', component: UsuarioIdComponent},
       {path: 'usuarioUpdate', component: UsuarioUpdateComponent},
+      {path: 'usuarioUpdate/:id', component: UsuarioUpdateComponent},
       {path: 'usuarioDelete', component: UsuarioDeleteComponent},
+      {path: 'usuarioDelete/:id', component: UsuarioDeleteComponent},
       {path: 'usuarioNome', component: UsuarioNomeComponent},
 
       {path: 'comunidadeAll', component: ComunidadeListComponent},
       {path: 'comunidadeId', component: ComunidadeIdComponent},
       {path: 'comunidadeInsert', component: ComunidadeInsertComponent},
       {path: 'comunidadeUpdate', component: ComunidadeUpdateComponent},
+      {path: 'comunidadeUpdate/:id', component: ComunidadeUpdateComponent},
       {path: 'comunidadeDelete', component: ComunidadeDeleteComponent},
+      {path: 'comunidadeDelete/:id', component: ComunidadeDeleteComponent},
 
       {path: 'comentarioAll', component: ComentarioListComponent},
       {path: 'comentarioId', component: ComentarioIdComponent},
       {path: 'comentarioInsert', component: ComentarioInsertComponent},
       {path: 'comentarioUpdate', component: ComentarioUpdateComponent},
+      {path: 'comentarioUpdate/:id', component: ComentarioUpdateComponent},
       {path: 'comentarioDelete', component: ComentarioDeleteComponent},
+      {path: 'comentarioDelete/:id', component: ComentarioDeleteComponent},
 
       {path: 'categoriaAll', component: CategoriaListComponent},
       {path: 'categoriaId', component: CategoriaIdComponent},
       {path: 'categoriaInsert', component: CategoriaInsertComponent},
       {path: 'categoriaUpdate', component: CategoriaUpdateComponent},
-      {path: 'categoriaDelete', component: CategoriaDeleteComponent}
+      {path: 'categoriaUpdate/:id', component: CategoriaUpdateComponent},
+      {path: 'categoriaDelete', component: CategoriaDeleteComponent},
+      {path: 'categoriaDelete/:id', component: CategoriaDeleteComponent}
     ]}
 
   
