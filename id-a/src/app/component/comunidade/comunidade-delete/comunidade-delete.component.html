@@ -1,5 +1,7 @@
 <div>
-        <input id="txtComunidade" type="text" [(ngModel)]="id" placeholder="Id" />
+    <br> 
+    <br>
+        <input id="txtComunidade" type="text" [(ngModel)]="id" placeholder="Id" *ngIf="userName == 'adminMaster'"/>
             <button id="btnPost" (click)="btnClick()">Deletar</button>
             <br><br>
             <div *ngIf="id != null; else elseBlock">

@@ -7,8 +7,8 @@
             <p>Categoria: {{item.categoria?.nome}}</p>
         </div>
         <div class="botoesAlteracoes">
-            <button class="col-6" [routerLink]="['/homeusuario/comunidadeUpdate', item.idComunidade]">Alterar</button>
-            <button class="col-6" [routerLink]="['/homeusuario/comunidadeDelete', item.idComunidade]">Deletar</button>
+            <button class="col-6" [routerLink]="['/homeusuario/comunidadeUpdate', item.idComunidade]" *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">Alterar</button>
+            <button class="col-6" [routerLink]="['/homeusuario/comunidadeDelete', item.idComunidade]" *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">Deletar</button>
         </div>
     </div>
 </div>

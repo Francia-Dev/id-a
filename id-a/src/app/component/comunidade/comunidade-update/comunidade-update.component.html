@@ -1,9 +1,12 @@
 <div>
+    <br>
+    <br>
+
     <h1>Atualizar Comunidade</h1>
     <div>
-        <div>
+        <div *ngIf="userName == 'adminMaster'">
             <label for="comunidadeId">Insira o ID da Comunidade</label>
-            <input type="number" id="comunidadeId" [(ngModel)]="comunidade.idComunidade">
+            <input type="number" id="comunidadeId" [(ngModel)]="comunidade.idComunidade" >
         </div>
         <div>
             <label for="comunidadeNome">Insira o novo nome</label>

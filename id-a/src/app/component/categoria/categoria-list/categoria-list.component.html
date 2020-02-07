@@ -15,8 +15,8 @@
                 <p class="card-text">Descrição: {{item.descricao}}</p>
             </div>
             <div class="botoesAlteracoes">
-                    <button class="col-6" [routerLink]="['/homeusuario/categoriaUpdate', item?.idCategoria]">Alterar</button>
-                    <button class="col-6" [routerLink]="['/homeusuario/categoriaDelete', item?.idCategoria]">Deletar</button>
+                    <button class="col-6" [routerLink]="['/homeusuario/categoriaUpdate', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Alterar</button>
+                    <button class="col-6" [routerLink]="['/homeusuario/categoriaDelete', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Deletar</button>
             </div>
         </div>
     </div>

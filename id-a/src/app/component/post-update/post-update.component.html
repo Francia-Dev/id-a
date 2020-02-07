@@ -1,9 +1,9 @@
 <div class="content">
     <h1>Atualizar postagem</h1>
     <div>
-        <div class="col-2 formPost">
+        <div class="col-2 formPost" *ngIf="userName == 'adminMaster'">
             <label for="postId">Id <strong style="color:brown; display: inline-block;" id="erroId">*</strong></label>
-            <input type="text" id="postId" [(ngModel)]="post.idPostagem">
+            <input type="text" id="postId" [(ngModel)]="post.idPostagem" >
         </div>
         <div class="col-3 formPost">
             <label for="postData">Data</label>

@@ -115,8 +115,8 @@
                         <div class="card-body">
                             <ul>
                                 <li> <a class="dropdown-item" [routerLink]="'comentarioAll'">Todas</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioId'">Busca</a></li>
-                                <li> <a class="dropdown-item" [routerLink]="'comentarioInsert'">Nova</a></li>
+                                <li><a class="dropdown-item" [routerLink]="'comentarioId'" [hidden]="adm">Busca</a></li>
+                                <li> <a class="dropdown-item" [routerLink]="'comentarioInsert'" [hidden]="adm"> Nova</a></li>
                                 <li><a class="dropdown-item" [routerLink]="'comentarioUpdate'" [hidden]="adm">Alteração</a></li>
                                 <li><a class="dropdown-item" [routerLink]="'comentarioDelete'" [hidden]="adm">Deletar</a></li>
                             </ul>

@@ -1,7 +1,7 @@
 <div class="content">
     <h1>Publicar novo comentario</h1>
     <div>
-        <div class="col-9 formPost formTtl">
+        <div class="col-9 formPost formTtl" *ngIf="userName == 'adminMaster'">
             <label for="idUsuario"> Id do Usuario <strong style="color:brown; display: inline-block;">*</strong></label><br>
             <input type="number" id="idUsuario" [(ngModel)]="comentario.usuario.idUsuario">
         </div>

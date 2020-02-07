@@ -5,6 +5,7 @@ import { Comunidade } from 'src/app/model/comunidade';
 import { Usuario } from 'src/app/model/usuario';
 import { Categoria } from 'src/app/model/categoria';
 import { Globals } from 'src/app/model/globals';
+import { CategoriaService } from 'src/app/service/categoria/categoria.service';
 
 @Component({
   selector: 'app-comunidade-insert',
@@ -14,11 +15,19 @@ import { Globals } from 'src/app/model/globals';
 })
 export class ComunidadeInsertComponent implements OnInit {
 
+
   comunidade: Comunidade = new Comunidade(0, null, new Usuario(0, "", "", "", "", null, null, null), null, new Categoria(0, "", "", null));
-  constructor(private comunidadeService: ComunidadeService, private router: Router) { }
+  constructor(private comunidadeService: ComunidadeService, private router: Router, private categoriaService: CategoriaService) { }
+
+  userName: String;
+  categoria: Categoria[]
 
   ngOnInit() {
     this.comunidade.usuario.idUsuario = Globals.USUARIO.idUsuario;
+    this.userName = Globals.USUARIO.nome;
+    this.findAll();
+    
+
   }
   inserir(){
     if(this.comunidade.usuario != null && this.comunidade.categoria != null){
@@ -34,4 +43,14 @@ export class ComunidadeInsertComponent implements OnInit {
       }
     }
   }
+
+  findAll() {
+    this.categoriaService.getAll().subscribe((categoriaOut: Categoria[]) => {
+      this.categoria = categoriaOut;
+    }, err => {
+      alert(`Erro ao carregar`);
+      this.router.navigate(['homeusuario']);
+    });
+  }
+
 }

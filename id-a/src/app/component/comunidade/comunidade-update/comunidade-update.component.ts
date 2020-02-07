@@ -17,18 +17,23 @@ export class ComunidadeUpdateComponent implements OnInit {
   comunidade: Comunidade = new Comunidade(0, null, new Usuario(0, "", "", "", "", null, null, null), null, new Categoria(0, "", "", null));
 
   constructor(private comunidadeService: ComunidadeService, private router: Router, private route: ActivatedRoute) { }
+  
+  userName: String;
 
   ngOnInit() {
     this.comunidade.usuario.idUsuario = Globals.USUARIO.idUsuario;
 
     let id:number = this.route.snapshot.params["id"];
     this.comunidade.idComunidade = id
-    this.comunidadeService.getById(id).subscribe((comunidadeOut: Comunidade) =>{
-     this.comunidade.nome = comunidadeOut.nome;
-     this.comunidade.categoria.idCategoria = comunidadeOut.categoria.idCategoria
-    }, err => {
-      alert(`Id não encontrado`);
-    })
+    if (id){
+      this.comunidadeService.getById(id).subscribe((comunidadeOut: Comunidade) =>{
+      this.comunidade.nome = comunidadeOut.nome;
+      this.comunidade.categoria.idCategoria = comunidadeOut.categoria.idCategoria
+      }, err => {
+        alert(`Id não encontrado`);
+      });
+    }
+    this.userName = Globals.USUARIO.nome;
   }
 
   alterar(){

@@ -18,12 +18,15 @@ export class CategoriaUpdateComponent implements OnInit {
   ngOnInit() {
     let id:number = this.route.snapshot.params["id"];
     this.categoria.idCategoria= id
-    this.categoriaService.getById(id).subscribe((categoriaOut: Categoria) =>{
-     this.categoria.nome = categoriaOut.nome;
-     this.categoria.descricao = categoriaOut.descricao;
-    }, err => {
-      alert(`Id não encontrado`);
-    })
+    if (id){
+      this.categoriaService.getById(id).subscribe((categoriaOut: Categoria) =>{
+      this.categoria.nome = categoriaOut.nome;
+      this.categoria.descricao = categoriaOut.descricao;
+      }, err => {
+        alert(`Id não encontrado`);
+      });
+    }
+    
   }
 
   alterar(){

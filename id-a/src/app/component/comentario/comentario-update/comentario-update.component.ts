@@ -17,18 +17,24 @@ export class ComentarioUpdateComponent implements OnInit {
   comentario: Comentario = new Comentario(0, "", new Usuario(0, "", "", "", "", null, null, null), new Post(0, "", "", "", "", null, null, null));
 
   constructor(private comentarioService: ComentarioService, private router: Router, private route: ActivatedRoute) { }
+  
+  userName: String;
 
   ngOnInit() {
     this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
 
     let id:number = this.route.snapshot.params["id"];
     this.comentario.idComentario = id
-    this.comentarioService.getById(id).subscribe((comentarioOut: Comentario) =>{
-      this.comentario = comentarioOut;
-    }, err => {
-      alert(`Id não encontrado`);
-    
-    })
+    if (id){
+      this.comentarioService.getById(id).subscribe((comentarioOut: Comentario) =>{
+        this.comentario = comentarioOut;
+      }, err => {
+        alert(`Id não encontrado`);
+      
+      });
+    }
+    this.userName = Globals.USUARIO.nome;
+
   }
 
   alterar(){

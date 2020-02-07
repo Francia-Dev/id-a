@@ -17,9 +17,13 @@ export class ComentarioInsertComponent implements OnInit {
   comentario: Comentario = new Comentario(0, "", new Usuario(0, "", "", "", "", null, null, null), new Post(0, "", "", "", "", null, null, null));
   
   constructor(private comentarioService: ComentarioService, private router: Router) { }
+  
+  userName: String;
 
   ngOnInit() {
     this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
+    this.userName = Globals.USUARIO.nome;
+
   }
   
   inserir(){

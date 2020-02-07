@@ -1,7 +1,7 @@
 <div>
         <h1>Atualizar Usuario</h1>
         <div>
-            <div class="col-2 formPost">
+            <div class="col-2 formPost" *ngIf="userName == 'adminMaster'"> 
                 <label for="usuarioId">Id <strong style="color:brown; display: inline-block;" id="erroId">*</strong></label>
                 <input type="text" id="usuarioId" [(ngModel)]="usuario.idUsuario">
             </div>
