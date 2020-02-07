@@ -1,68 +1,65 @@
 <div class="container">
     <h1>
-      Cadastro
+        Cadastro
     </h1>
     <form [formGroup]="angForm" novalidate class="centro">
-          <div class="form-group">
-              <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome" placeholder="Nome completo">
-          </div>
-          <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-              <div *ngIf="angForm.controls['name'].errors.required">
+        <div class="form-group">
+            <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome" placeholder="Nome completo">
+        </div>
+        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['name'].errors.required">
                 Nome requerido.
-              </div>
-          </div>
-            <div class="form-group">
-            
-              <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email" placeholder="Email">
             </div>
-            <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
-                Exemplo: ex@email.com
-                <div *ngIf="angForm.controls['address'].errors.required">
+        </div>
+        <div class="form-group">
+
+            <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email" placeholder="Email">
+        </div>
+        <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
+            Exemplo: ex@email.com
+            <div *ngIf="angForm.controls['address'].errors.required">
                 Email requerido.
-              </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone" placeholder="Telefone">
-              </div>
-              <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
-                Telefone deve conter de 8 a 11 números
-                <div *ngIf="angForm.controls['tel'].errors.required">
-                  Telefone requerido.
-                </div>
-              </div>
-              <div class="form-group">
-                <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha *deve conter ao menos 1 caracter especial (@ # $ % &)" >
-              </div>
-              <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
-                Senha Fraca
-                <div *ngIf="angForm.controls['password'].errors.required">
-                  Senha requerido.
-                </div>
-              </div>
-              <div class="form-group">
-                <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Confirmar senha">
-              </div>
-              <div *ngIf="angForm.controls['passwordValidate'].invalid && (angForm.controls['passwordValidate'].dirty || angForm.controls['passwordValidate'].touched)" class="alert alert-danger">
-                Senhas não coincidem.
-                <div *ngIf="angForm.controls['passwordValidate'].errors.required">
-                  Senha igual requerida.
-                </div>
-              </div>
-              <input type="button" value="Verificar Senhas" (click)="btnClickComment()" class="btn botaobuscar" id="BotaoVerifica">
-              <br>
-          <button  id="BotaoConfirma" style="visibility: hidden; width: 60%;" (click)="cadastrar()"
-              [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone" placeholder="Telefone">
+        </div>
+        <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
+            Telefone deve conter de 8 a 11 números
+            <div *ngIf="angForm.controls['tel'].errors.required">
+                Telefone requerido.
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha *deve conter ao menos 1 caracter especial (@ # $ % &)">
+        </div>
+        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+            Senha Fraca
+            <div *ngIf="angForm.controls['password'].errors.required">
+                Senha requerido.
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Confirmar senha">
+        </div>
+        <div *ngIf="angForm.controls['passwordValidate'].invalid && (angForm.controls['passwordValidate'].dirty || angForm.controls['passwordValidate'].touched)" class="alert alert-danger">
+            Senhas não coincidem.
+            <div *ngIf="angForm.controls['passwordValidate'].errors.required">
+                Senha igual requerida.
+            </div>
+        </div>
+        <input type="button" value="Verificar Senhas" (click)="btnClickComment()" class="btn botaobuscar" id="BotaoVerifica">
+        <br>
+        <button id="BotaoConfirma" style="visibility: hidden; width: 60%;" (click)="cadastrar()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
               Cadastrar
           </button>
-          <br>
-          <br>
-          <button  id="BotaoConfirma2" style="visibility: hidden; width: 60%;" (click)="atualizar()"
-              [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
+        <br>
+        <br>
+        <button id="BotaoConfirma2" style="visibility: hidden; width: 60%;" (click)="atualizar()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
               Atualizar
           </button>
-          <br><br>
-          <div id="statusLogin" style="visibility: hidden">Cadastro confirmado</div>
+        <br><br>
+        <div id="statusLogin" style="visibility: hidden">Cadastro confirmado</div>
     </form>
     <br />
-  </div>
-
+</div>

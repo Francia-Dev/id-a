@@ -1,43 +1,51 @@
 <div class="all" style="text-align: center">
     <div *ngIf="post != null">
-        <div class="conteudo row" *ngFor="let item of post.slice().reverse(); let i = index">
+        <div class="row caixa" *ngFor="let item of post.slice().reverse(); let i = index">
             <div class="card col-8" [routerLink]="['homeusuario/postId', item?.idPostagem]">
-                <img class="card-img" src="{{item?.linkimg}}" />
+                <div class="conteudoInterno">
+                    <div class="englobar">
+                        <div class="row">
+                            <img class="card-img imagemCard" src="{{item?.linkimg}}" />
+                            <div class="informacoes">
+                                <div class="linhaDeCima">
+                                    <h2 class="conteudoCard">{{item?.titulo}}</h2>
+                                    <div class="numero conteudoCard" *ngIf="post != null">
+                                        <p class="conteudoCard">{{item?.idPostagem}}</p>
+                                    </div>
+                                </div>
 
-                <div class="card-body">
-                    <div class="numero" *ngIf="post != null">
-                        <p>{{item?.idPostagem}}</p>
+                                <p class="conteudoCard">{{item?.usuario?.nome}}</p>
+                                <p class="conteudoCard">{{item.dataInclusao}}</p>
 
+                            </div>
+                        </div>
+
+                        <div class="content conteudoTexto">
+                            {{item.texto}}
+                        </div>
                     </div>
-                    <div class="card-title">
-                        {{item?.titulo}}
-                        {{item?.usuario?.nome}}
-                        <p>{{item.dataInclusao}}</p>
-                    </div>
-                    <div class="content">
-                        {{item.texto}}
-                    </div>
-                </div>     
+                </div>
+
             </div>
-            
-                <div class="col-4">
-                    <div class="comentarios">
-                <div *ngFor="let item of item.comentario">
-                    <div class="card">
-                        <p class="nomeComentario">{{item.usuario?.nome}}</p>
-                        <p class="corpoComentario">{{item?.texto}}</p>
+
+            <div class="col-4 caixaComentarios">
+                <div class="comentarios">
+                    <div *ngFor="let item of item.comentario">
+                        <div class="card">
+                            <p class="nomeComentario">{{item.usuario?.nome}}</p>
+                            <p class="corpoComentario">{{item?.texto}}</p>
+                        </div>
                     </div>
-                </div></div>
+                </div>
                 <div class="novocomentario">
                     <input type="text" [(ngModel)]="novoComentario" class="textocomentario" placeholder="Comentar..." />
-                    <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario(item?.idPostagem)">Comentar</button>
+                    <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario(item?.idPostagem)">Comentar</button>
                 </div>
             </div>
-            
-                            <div class="botoesAlteracoes">
-                                    <button class="col-6" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'" >Alterar</button>
-                                    <button class="col-6" [routerLink]="['homeusuario/postDelete', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">Deletar</button>
-                            </div>
+            <div class="botoesAlteracoes">
+                <button class="col-6 botaobuscar" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">Alterar</button>
+                <button class="col-6 botaobuscar" [routerLink]="['homeusuario/postDelete', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">Deletar</button>
+            </div>
         </div>
     </div>
 </div>

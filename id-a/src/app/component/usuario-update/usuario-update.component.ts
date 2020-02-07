@@ -55,7 +55,6 @@ export class UsuarioUpdateComponent implements OnInit {
       alert("Usuario alterado com sucesso!");
       Globals.USUARIO = this.usuario;
       localStorage.setItem("usuarioNome", String(Globals.USUARIO.nome));
-      window.location.reload();
       this.router.navigate(['/homeusuario/usuarioAll']);
 
       })

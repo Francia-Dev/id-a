@@ -1,40 +1,32 @@
-img {
+.imagemCard {
     width: 20%;
-    background-color: #2c2c2c;
-    height: 20%;
+}
+
+.conteudoTexto {
+    display: inline-block;
     overflow: hidden;
+    height: 10rem;
+    margin: auto;
+    text-align: justify
 }
 
-.content {
-    font-size: 30px;
-    padding: 1rem 0;
+.informacoes .conteudoCard {
+    margin: 0
 }
 
-.conteudo {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 1em;
+.conteudoCard {
+    height: min-content;
+    display: inline-block
+}
+
+.caixa {
+    margin: 3rem;
+}
+
+.caixaComentarios {}
+
+.conteudoInterno {
+    padding: 2rem;
+    overflow: hidden;
     height: 21rem;
-}
-
-.numero {
-    float: right;
-}
-
-.all {
-    background-color: #ffffff
-}
-
-.comentarios {
-    overflow: auto;
-    height: 14rem;
-}
-
-.novocomentario {
-    vertical-align: bottom;
-}
-
-.textocomentario {
-    margin-bottom: 1rem;
-    margin-top: 2rem
 }

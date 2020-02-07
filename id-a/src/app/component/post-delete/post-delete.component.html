@@ -1,27 +1,27 @@
 <div>
     <br><br>
-        <input id="txtPost" type="text" [(ngModel)]="id" placeholder="Id" *ngIf="userName == 'adminMaster'"/>
-            <button id="btnPost" (click)="btnClick()">Deletar</button>
-            <br><br>
-            <div *ngIf="id != null; else elseBlock">
-                    <div *ngIf="post != null">
-                        <h3>Deletar a seguinte postagem?</h3>
-                            <div class="ttl">{{post.titulo}}</div>
-                            <div><img class="card-img" src="{{item?.linkimg}}" /></div>
-                            <div><label *ngIf="post.idPostagem != null"><img src="{{post.linkimg}}" /></label> </div>
-                            <div class="content">{{post.texto}} </div>
-                            <div>Autor: {{item?.usuario?.nome}}</div>
-                            <div class="numero">{{post.dataInclusao}} </div>
-                            <div *ngFor="let item of post?.comentario">
-                                <div class="">
-                                    <p class="">{{item.usuario?.nome}}</p>
-                                    <p class="">{{item?.texto}}</p>
-                                </div>
-                            </div>
-                        </div>
+    <input id="txtPost" type="text" [(ngModel)]="id" placeholder="Id" *ngIf="userName == 'adminMaster'" />
+    <button id="btnPost" (click)="btnClick()">Deletar</button>
+    <br><br>
+    <div *ngIf="id != null; else elseBlock">
+        <div *ngIf="post != null">
+            <h3>Deletar a seguinte postagem?</h3>
+            <div class="ttl">{{post.titulo}}</div>
+            <div><img class="card-img" src="{{post?.linkimg}}" /></div>
+            <div><label *ngIf="post.idPostagem != null"><img src="{{post.linkimg}}" /></label> </div>
+            <div class="content">{{post.texto}} </div>
+            <div>Autor: {{post?.usuario?.nome}}</div>
+            <div class="numero">{{post.dataInclusao}} </div>
+            <div *ngFor="let item of post?.comentario">
+                <div class="">
+                    <p class="">{{item.usuario?.nome}}</p>
+                    <p class="">{{item?.texto}}</p>
+                </div>
             </div>
-            <ng-template #elseBlock>
-                <h3>Informe o Id para continuar...</h3>
-                <img src="./../../../assets/pesquisa.gif">   
-            </ng-template>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <h3>Informe o Id para continuar...</h3>
+        <img src="./../../../assets/pesquisa.gif">
+    </ng-template>
 </div>

@@ -8,10 +8,10 @@
         <div *ngIf="id != null; else elseBlock">
             <div *ngIf="post != null">
                 <div class="ttl">{{post.titulo}}</div>
-                <div><img class="card-img" src="{{item?.linkimg}}" /></div>
+                <div><img class="card-img" src="{{post?.linkimg}}" /></div>
                 <div><label *ngIf="post.idPostagem != null"><img src="{{post.linkimg}}" /></label> </div>
                 <div class="content">{{post.texto}} </div>
-                <div>Autor: {{item?.usuario?.nome}}</div>
+                <div>Autor: {{post?.usuario?.nome}}</div>
                 <div class="numero">{{post.dataInclusao}} </div>
                 <div *ngFor="let item of post?.comentario">
                     <div class="">
@@ -26,45 +26,45 @@
             </div>
         </div>
         <ng-template #elseBlock>
-        <h3>Informe o Id para continuar...</h3>
-        <img src="./../../../assets/pesquisa.gif">   
+            <h3>Informe o Id para continuar...</h3>
+            <img src="./../../../assets/pesquisa.gif">
         </ng-template>
     </div>
     <div id="listaPosts">
-            <div *ngIf="posts != null">
-                    <div class="" *ngFor="let item of posts.slice().reverse(); let i = index">
-                        
-                            <img class="card-img" src="{{item?.linkimg}}" />
-            
-                            <div class="card-body">
-                                <div class="numero" *ngIf="post != null">
-                                    <p>{{item?.idPostagem}}</p>
-            
-                                </div>
-                                <div class="card-title">
-                                    {{item?.titulo}}
-                                    {{item?.usuario?.nome}}
-                                    <p>{{item.dataInclusao}}</p>
-                                </div>
-                                <div class="content">
-                                    {{item.texto}}
-                                </div>
-                            </div>
-                        
-                            
-                                <div class="comentarios">
-                            <div *ngFor="let item of item.comentario">
-                                <div class="card">
-                                    <p class="nomeComentario">{{item.usuario?.nome}}</p>
-                                    <p class="corpoComentario">{{item?.texto}}</p>
-                                </div>
-                            </div></div>
-                            <div class="novocomentario">
-                                <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
-                                <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario2(item?.idPostagem)">Comentar</button>
-                            
+        <div *ngIf="posts != null">
+            <div class="" *ngFor="let item of posts.slice().reverse(); let i = index">
+
+                <img class="card-img" src="{{item?.linkimg}}" />
+
+                <div class="card-body">
+                    <div class="numero" *ngIf="post != null">
+                        <p>{{item?.idPostagem}}</p>
+
+                    </div>
+                    <div class="card-title">
+                        {{item?.titulo}} {{item?.usuario?.nome}}
+                        <p>{{item.dataInclusao}}</p>
+                    </div>
+                    <div class="content">
+                        {{item.texto}}
+                    </div>
+                </div>
+
+
+                <div class="comentarios">
+                    <div *ngFor="let item of item.comentario">
+                        <div class="card">
+                            <p class="nomeComentario">{{item.usuario?.nome}}</p>
+                            <p class="corpoComentario">{{item?.texto}}</p>
                         </div>
                     </div>
                 </div>
+                <div class="novocomentario">
+                    <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
+                    <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario2(item?.idPostagem)">Comentar</button>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
