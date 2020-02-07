@@ -22,7 +22,6 @@ export class PostDeleteComponent implements OnInit {
       this.post = postOut;
     }, err => {
       alert(`Id não encontrado`);
-      this.router.navigate(['homeusuario/']);
     })
   }
 

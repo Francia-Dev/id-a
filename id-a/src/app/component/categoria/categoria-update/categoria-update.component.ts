@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'src/app/service/categoria/categoria.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Categoria } from 'src/app/model/categoria';
 
 @Component({
@@ -13,9 +13,17 @@ export class CategoriaUpdateComponent implements OnInit {
   id: number;
   categoria: Categoria = new Categoria(0, "", "", null);
 
-  constructor(private categoriaService: CategoriaService, private router: Router) { }
+  constructor(private categoriaService: CategoriaService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    let id:number = this.route.snapshot.params["id"];
+    this.categoria.idCategoria= id
+    this.categoriaService.getById(id).subscribe((categoriaOut: Categoria) =>{
+     this.categoria.nome = categoriaOut.nome;
+     this.categoria.descricao = categoriaOut.descricao;
+    }, err => {
+      alert(`Id não encontrado`);
+    })
   }
 
   alterar(){

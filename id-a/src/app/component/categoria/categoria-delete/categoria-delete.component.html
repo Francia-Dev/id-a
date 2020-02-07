@@ -3,7 +3,11 @@
         <input id="txtCategoria" type="text" [(ngModel)]="id" placeholder="Id" />
             <button id="btnPost" (click)="btnClick()">Deletar</button>
             <br><br>
+            <h3>Deletar a seguinte categoria?</h3>
+            
             <div *ngIf="id != null; else elseBlock">
+                    <div class="ttl">Nome: {{categoria.nome}}</div>
+                    <div class="ttl">Descrição: {{categoria.descricao}}</div>
             </div>
             <ng-template #elseBlock>
                 <h3>Informe o Id para continuar...</h3>

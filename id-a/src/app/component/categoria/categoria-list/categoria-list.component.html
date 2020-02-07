@@ -14,5 +14,9 @@
                 <p>Id: {{item.idCategoria}}</p>
                 <p class="card-text">Descrição: {{item.descricao}}</p>
             </div>
+            <div class="botoesAlteracoes">
+                    <button class="col-6" [routerLink]="['/homeusuario/categoriaUpdate', item?.idCategoria]">Alterar</button>
+                    <button class="col-6" [routerLink]="['/homeusuario/categoriaDelete', item?.idCategoria]">Deletar</button>
+            </div>
         </div>
     </div>

@@ -33,7 +33,7 @@
                             <li><a [routerLink]="'/homeusuario'">Todas</a></li>
                             <li><a [routerLink]="'postId'">Busca</a></li>
                             <li><a [routerLink]="'postInsert'">Nova</a></li>
-                            <li><a [routerLink]="'postUpdate'">Alteração</a></li>
+                            <li><a [routerLink]="'postUpdate'" [hidden]="adm">Alteração</a></li>
                             <li><a [routerLink]="'postDelete'" [hidden]="adm">Deletar</a></li>
                         </ul>
                     </div>
@@ -54,8 +54,8 @@
                             <li><a class="dropdown-item" [routerLink]="'usuarioAll'">Todas</a></li>
                             <li><a class="dropdown-item" [routerLink]="'usuarioId'">Busca por Id</a></li>
                             <li><a class="dropdown-item" [routerLink]="'usuarioNome'">Busca por Nome</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioUpdate'">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioDelete'">Deletar</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'usuarioUpdate'" [hidden]="adm">Alteração</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'usuarioDelete'" [hidden]="adm">Deletar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -75,8 +75,8 @@
                             <li><a class="dropdown-item" [routerLink]="'comunidadeAll'">Todas</a></li>
                             <li><a class="dropdown-item" [routerLink]="'comunidadeId'">Busca por Id</a></li>
                             <li><a class="dropdown-item" [routerLink]="'comunidadeInsert'">Nova</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeUpdate'">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeDelete'">Deletar</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'comunidadeUpdate'" [hidden]="adm">Alteração</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'comunidadeDelete'" [hidden]="adm">Deletar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -95,9 +95,9 @@
                         <ul>
                             <li><a class="dropdown-item" [routerLink]="'categoriaAll'">Todas</a></li>
                             <li><a class="dropdown-item" [routerLink]="'categoriaId'">Busca</a></li>
-                            <li> <a class="dropdown-item" [routerLink]="'categoriaInsert'">Nova</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaUpdate'">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaDelete'">Deletar</a></li>
+                            <li> <a class="dropdown-item" [routerLink]="'categoriaInsert'" [hidden]="adm">Nova</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'categoriaUpdate'" [hidden]="adm">Alteração</a></li>
+                            <li><a class="dropdown-item" [routerLink]="'categoriaDelete'" [hidden]="adm">Deletar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,8 +117,8 @@
                                 <li> <a class="dropdown-item" [routerLink]="'comentarioAll'">Todas</a></li>
                                 <li><a class="dropdown-item" [routerLink]="'comentarioId'">Busca</a></li>
                                 <li> <a class="dropdown-item" [routerLink]="'comentarioInsert'">Nova</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioUpdate'">Alteração</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioDelete'">Deletar</a></li>
+                                <li><a class="dropdown-item" [routerLink]="'comentarioUpdate'" [hidden]="adm">Alteração</a></li>
+                                <li><a class="dropdown-item" [routerLink]="'comentarioDelete'" [hidden]="adm">Deletar</a></li>
                             </ul>
                         </div>
                     </div>
@@ -131,7 +131,6 @@
         <!--divisóriaiaushdisauhdpiasuhdpsiauofhdpsaiodfuh-->
         
        
-    
 
 </div>
 <div class="grade" style="width: 75%;">

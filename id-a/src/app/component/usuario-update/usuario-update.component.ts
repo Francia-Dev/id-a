@@ -35,7 +35,6 @@ export class UsuarioUpdateComponent implements OnInit {
      this.usuario.telefone = usuarioOut.telefone;
     }, err => {
       alert(`Id não encontrado`);
-      this.router.navigate(['homeusuario/']);
     })
   }
   alterar(){
@@ -50,6 +49,5 @@ export class UsuarioUpdateComponent implements OnInit {
       this.router.navigate(['/homeusuario/usuarioAll']);
       })
     } 
-    
   }
 }

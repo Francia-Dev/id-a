@@ -27,10 +27,10 @@ export class PostInsertComponent implements OnInit {
         this.post = postOut;
         console.log(this.post);
         alert("Mensagem postada com sucesso");
-        this.router.navigate(['/homeusuario/postAll']);
+        this.router.navigate(['/homeusuario/']);
       }, err => {
         alert(`Erro ao criar`);
-        this.router.navigate(['homeusuario/postAll']);
+        this.router.navigate(['homeusuario/']);
       })
     }
   }

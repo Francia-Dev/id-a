@@ -16,7 +16,7 @@ public class Post {
 	private String titulo;
 	@Column(length = 1000)
 	private String texto;
-	@Column(length = 255)
+	@Column(length = 1000)
 	private String linkimg;
 	@Column(length = 255)
 	private String dataInclusao;

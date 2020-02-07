@@ -35,8 +35,8 @@
             </div>
             
                             <div class="botoesAlteracoes">
-                                    <button class="col-6" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]">Alterar</button>
-                                    <button class="col-6" [routerLink]="['homeusuario/postDelete', item?.idPostagem]">Deletar</button>
+                                    <button class="col-6" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'" >Alterar</button>
+                                    <button class="col-6" [routerLink]="['homeusuario/postDelete', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">Deletar</button>
                             </div>
         </div>
     </div>

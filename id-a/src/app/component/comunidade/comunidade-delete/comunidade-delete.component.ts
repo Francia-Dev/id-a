@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ComunidadeService } from 'src/app/service/comunidade/comunidade.service';
 import { Comunidade } from 'src/app/model/comunidade';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comunidade-delete',
@@ -13,9 +13,17 @@ export class ComunidadeDeleteComponent implements OnInit {
   comunidade: Comunidade = new Comunidade(0,"",null,null, null)
   id: number;
   mensagem: String
-  constructor(private comunidadeService: ComunidadeService, private router: Router) { }
+  constructor(private comunidadeService: ComunidadeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    let id:number = this.route.snapshot.params["id"];
+    this.id = id
+    this.comunidadeService.getById(id).subscribe((comunidadeOut: Comunidade) =>{
+      this.comunidade = comunidadeOut;
+     
+    }, err => {
+      alert(`Id não encontrado`);
+    })
   }
 
   btnClick(){

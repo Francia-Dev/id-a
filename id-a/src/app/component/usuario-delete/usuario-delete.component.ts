@@ -23,7 +23,6 @@ export class UsuarioDeleteComponent implements OnInit {
       this.usuario.email = usuarioOut.email;
      }, err => {
        alert(`Id não encontrado`);
-       this.router.navigate(['homeusuario/']);
      })
   }
   btnClick(){

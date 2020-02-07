@@ -34,7 +34,6 @@ export class PostUpdateComponent implements OnInit {
       this.post.linkimg = postOut.linkimg;
     }, err => {
       alert(`Id não encontrado`);
-      this.router.navigate(['homeusuario/']);
     })
   }
 

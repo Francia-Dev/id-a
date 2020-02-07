@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class HomeusuarioComponent implements OnInit {
 
   usuario: Usuario
-  adm: Boolean = false;
+  adm: Boolean = true;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -29,7 +29,9 @@ export class HomeusuarioComponent implements OnInit {
       this.router.navigate(['/login']);
       } else{
       this.usuario = Globals.USUARIO;
-      
+      }
+      if (Globals.USUARIO.nome == "adminMaster"){
+        this.adm = false;
       }
   }
 

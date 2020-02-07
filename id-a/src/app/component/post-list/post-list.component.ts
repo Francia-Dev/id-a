@@ -26,6 +26,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.findAll();
     this.comentario.usuario.idUsuario = Globals.USUARIO.idUsuario;
+    this.comentario.usuario.nome = Globals.USUARIO.nome;
   }
 
     findAll(){
