@@ -1,11 +1,10 @@
 <div class="container">
     <h1>
-      Cadastro novo Usuário
+      Cadastro
     </h1>
-    <form [formGroup]="angForm" novalidate>
+    <form [formGroup]="angForm" novalidate class="centro">
           <div class="form-group">
-              <label>Nome:</label>
-              <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome">
+              <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome" placeholder="Nome completo">
           </div>
           <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
               <div *ngIf="angForm.controls['name'].errors.required">
@@ -13,8 +12,8 @@
               </div>
           </div>
             <div class="form-group">
-              <label>Email:</label>
-              <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email">
+            
+              <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email" placeholder="Email">
             </div>
             <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
                 Exemplo: ex@email.com
@@ -23,8 +22,7 @@
               </div>
             </div>
             <div class="form-group">
-                <label>Telefone:</label>
-                <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone">
+                <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone" placeholder="Telefone">
               </div>
               <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
                 Telefone deve conter de 8 a 11 números
@@ -33,8 +31,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Senha:</label>
-                <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha deve conter ao menos 1 caracter especial (@ # $ % &)">
+                <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha *deve conter ao menos 1 caracter especial (@ # $ % &)" >
               </div>
               <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
                 Senha Fraca
@@ -43,8 +40,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Confirmar senha:</label>
-                <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Esse campo deve ser igual a senha">
+                <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Confirmar senha">
               </div>
               <div *ngIf="angForm.controls['passwordValidate'].invalid && (angForm.controls['passwordValidate'].dirty || angForm.controls['passwordValidate'].touched)" class="alert alert-danger">
                 Senhas não coincidem.

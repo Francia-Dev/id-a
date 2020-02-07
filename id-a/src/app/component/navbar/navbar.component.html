@@ -6,25 +6,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand"><img src="./../../../assets/logoSimples.png" class="nav-link"></a>
+            <a class="navbar-brand"><img src="./../../../assets/logoSimples.png"></a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-item dropdown" style="display: inline-block">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Projetos
-          </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " [routerLink]="'/postUpdate'">Atualizar</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" [routerLink]="'/postId'">Buscar</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" [routerLink]="'/postAll'">Mostrar todos</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" [routerLink]="'/postInsert'">Novo</a>
-                        </div></a>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="'/postAll'">Feed</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="'/'">Categorias</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="'/'">Comunidades</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="'/sobre'">Sobre</a>
@@ -37,7 +31,7 @@
                 </li>
                 <li class="logCad">
                     <a class="nav-link" [routerLink]="'/login'">Login</a><strong>/</strong>
-                    <a [routerLink]="'/cadastro'" class="cadastro">Junte-se a nós</a>
+                    <a [routerLink]="'/cadastro'" class="cadastro">Cadastro</a>
                 </li>
             </ul>
 
