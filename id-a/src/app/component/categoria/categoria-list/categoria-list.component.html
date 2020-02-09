@@ -8,15 +8,16 @@
 
 <div class="conteudo">
     <div class="card" *ngFor="let item of categoria">
-        <div class="card-img-top"> <img src="./../../../../assets/construindo.jpg" alt=""></div>
+        <div class="card-img-top"> <img src="./../../../../assets/imagemPrev.png" alt=""></div>
         <div class="card-body">
-            <p class="card-title">Nome: {{item.nome}}</p>
-            <p>Id: {{item.idCategoria}}</p>
+            <div class="principal">
+                <p class="card-title">Nome: {{item.nome}}#{{item.idCategoria}}</p>
+            </div>
             <p class="card-text">Descrição: {{item.descricao}}</p>
         </div>
         <div class="botoesAlteracoes">
-            <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/categoriaUpdate', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Alterar</button>
-            <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/categoriaDelete', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Deletar</button>
+            <button class="botaobuscar" [routerLink]="['/homeusuario/categoriaUpdate', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Alterar</button>
+            <button class="botaobuscar" [routerLink]="['/homeusuario/categoriaDelete', item?.idCategoria]" *ngIf="userName == 'adminMaster'">Deletar</button>
         </div>
     </div>
 </div>

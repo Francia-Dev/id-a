@@ -36,9 +36,8 @@ export class CadastroComponent implements OnInit {
   }
   btnClickComment(){
     if(this.usuario.senha == this.senhaConfirm && this.usuario.senha != null){
-      document.getElementById("BotaoConfirma").style.visibility = "visible";
-      document.getElementById("BotaoConfirma2").style.visibility = "visible";
-      document.getElementById("BotaoVerifica").style.visibility = "hidden";
+      document.getElementById("BotaoConfirma").style.display = "inline-block";
+      document.getElementById("BotaoVerifica").style.display = "none";
     };
   }
 

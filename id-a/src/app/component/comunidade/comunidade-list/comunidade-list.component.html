@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div *ngFor="let item of comunidade">
         <div class="card">
             <p>Id comunidade: {{item.idComunidade}}</p>
@@ -11,4 +11,46 @@
             <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/comunidadeDelete', item.idComunidade]" *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">Deletar</button>
         </div>
     </div>
+</div> -->
+
+
+<div class="grupo">
+    <div class="caixa row" *ngFor="let item of comunidade">
+
+        <div class="conteudo" [routerLink]="['homeusuario/postId', item?.idPostagem]">
+
+            <div class="imagemPost">
+
+
+                <img src="./../../../../assets/comunidade.png" alt="">
+
+
+            </div>
+            <div class="header">
+
+                <div class="titulo">
+
+                    <h2 class=""> {{item.nome}} #{{item.idComunidade}}</h2>
+
+                    <p class="">Criador da Comunidade: {{item.usuario?.nome}}</p>
+                    <p class="baseline">Categoria: {{item.categoria?.nome}}</p>
+
+
+
+
+                </div>
+            </div>
+            <div class="botoesinternos">
+                <button class="botaobuscar" [routerLink]="['/homeusuario/comunidadeUpdate', item.idComunidade]" *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">⭮  Alterar</button>
+                <button class="botaobuscar" [routerLink]="['/homeusuario/comunidadeDelete', item.idComunidade]" *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">🗑  Deletar</button>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
 </div>

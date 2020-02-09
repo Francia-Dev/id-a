@@ -1,32 +1,125 @@
-.imagemCard {
-    width: 20%;
+.conteudo {
+    padding: 1em;
+    height: 17em;
+    border: solid 1px rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-.conteudoTexto {
-    display: inline-block;
+.comentarios {
+    height: 17em;
+}
+
+.lista {
+    height: 15em;
+    overflow: auto;
+}
+
+.imagemPost {
+    width: 6em;
+    height: 6em;
     overflow: hidden;
-    height: 10rem;
-    margin: auto;
-    text-align: justify
+    margin-right: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
 }
 
-.informacoes .conteudoCard {
-    margin: 0
+.imagemPost img {
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    object-position: center;
 }
 
-.conteudoCard {
+.titulo {
+    display: inline-block;
+    width: 13em;
+}
+
+.header {
+    height: 7em;
+}
+
+.titulo h2 {
+    max-width: 10em;
+    word-wrap: break-word;
+}
+
+.titulo h2::first-letter {
+    text-transform: uppercase;
+}
+
+h2,
+.numero {
+    display: inline-block;
+    margin-bottom: 0;
     height: min-content;
-    display: inline-block
+}
+
+.data {
+    margin-left: 1em;
+    ;
+}
+
+.rodape {
+    text-align: end;
+    margin-top: 1em;
+}
+
+.basettl {
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.texto {
+    text-align: justify;
+    height: 6em;
+    overflow: hidden;
+}
+
+.informacoes {
+    padding: 0;
 }
 
 .caixa {
     margin: 3rem;
+    margin-top: none;
 }
 
-.caixaComentarios {}
-
-.conteudoInterno {
-    padding: 2rem;
+.altdel {
+    width: 1.5em;
     overflow: hidden;
-    height: 21rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: width 1s
+}
+
+.altdel:hover {
+    width: 100%;
+}
+
+.botoesinternos {
+    display: inline-block;
+    margin-left: 9em;
+    margin-bottom: 2em;
+    padding-left: 5px;
+    border-left: solid 1px rgb(0, 0, 0, 0.1);
+    vertical-align: top;
+}
+
+.novoComentario {
+    height: min-content;
+    ;
+}
+
+.novoComentario input {
+    margin-bottom: 0;
+}
+
+.novoComentario button {
+    position: relative;
+    left: 100%;
+    bottom: 2.1rem;
+    border-radius: 20px;
 }

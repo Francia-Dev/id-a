@@ -1,0 +1,59 @@
+.conteudo {
+    width: 85%;
+    border: solid 1px rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.imagemPost {
+    width: 8em;
+    height: 8em;
+    overflow: hidden;
+    margin-right: 1em;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
+}
+
+.header {
+    width: 27em;
+    display: inline-block;
+}
+
+.imagemPost img {
+    width: 8em;
+    height: 8em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.titulo h2 {
+    word-wrap: break-word;
+}
+
+.baseline {
+    margin-bottom: 0;
+    vertical-align: bottom;
+}
+
+.titulo h2::first-letter {
+    text-transform: uppercase;
+}
+
+h2 {
+    display: inline-block;
+    margin-bottom: 0;
+    height: min-content;
+}
+
+.grupo {
+    margin: 0em 3em;
+}
+
+.caixa {
+    margin-bottom: 2em;
+}
+
+.botoesinternos {
+    display: inline-block;
+    vertical-align: text-top;
+}

@@ -1,15 +1,47 @@
+.caixa {
+    width: 30%;
+    margin: 2em auto;
+}
 
-h1{
+.caixa li {
+    width: 50%;
     text-align: center;
-    color: orange;
-    padding: 2rem 0 
+    font-size: 25px;
 }
 
-#BotaoVerifica {
-    float: right;
+#home-tab {
+    border-bottom: rgb(0, 0, 0, 0.03) 1px solid;
+    color: gray;
 }
 
-.form-control{
+#home-tab:hover {
+    color: #7006BC;
+}
+
+.nav-item a {
+    border-bottom-color: #f7f7f7f7;
+}
+
+.nav-link.active {
+    background-color: #f7f7f7f7;
+    color: orange
+}
+
+.centro {
+    border: rgb(0, 0, 0, 0.1) solid 1px;
+    margin: 0 auto;
+    background-color: #f7f7f7f7;
+    padding: 2rem;
+    padding-bottom: 0;
+    border-top: none;
+}
+
+.centro img {
+    width: 70%;
+    margin: 0 15% 2em;
+}
+
+.form-control {
     border: rgb(215, 207, 230) 2px solid;
     font-size: 20px;
     color: orange;
@@ -25,20 +57,27 @@ h1{
     box-shadow: none;
 }
 
-label{
-    display: none;
+#BotaoVerifica {
+    margin-bottom: 0;
 }
 
-.centro {
-    width: 60%;
-    margin: 0 auto;
-    background-color: rgb(0, 0, 0, 0.03);
-    padding: 2rem;
-    padding-bottom: 0;
+#BotaoConfirma {
+    width: 100%;
+    border-radius: 10px;
+    border: orange 2px solid;
+    color: orange;
+    background-color: #f4f4f4;
+    font-size: 20px;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+#BotaoConfirma:hover {
+    background-color: orange;
+    color: white;
+    border-color: orange;
+}
 
+#BotaoConfirma:focus {
+    outline: none;
+    box-shadow: none;
+    ;
 }

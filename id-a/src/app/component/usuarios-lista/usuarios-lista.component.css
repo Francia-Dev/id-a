@@ -1,3 +1,19 @@
-.card{
-    margin-bottom: 1rem
+h1 {
+    font-size: 50px;
+    color: orange;
+    padding: 1rem;
+    text-align: center;
+}
+
+.botoesAlteracoes {
+    position: relative;
+    bottom: -5em;
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+strong {
+    font-size: 18px;
 }

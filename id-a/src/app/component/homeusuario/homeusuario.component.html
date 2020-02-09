@@ -1,17 +1,15 @@
 <div class="row" style="width: 98%; margin: 0 auto">
 
-    <div class="grade" style="width: 18%; margin: 0 auto">
+    <div class="grade menuUsuario" style="width: 18%;">
         <div>
-            <h3>Bem vindo</h3>
+            <h3>Bem vindo,</h3>
 
             <div id="exibirNome">
-               
 
-                {{ usuario?.nome }} logado com sucesso
+
+                {{ usuario?.nome }}
             </div>
-            <div>
-                <button (click)="sair()">Sair</button>
-            </div>
+
             <hr />
         </div>
 
@@ -19,22 +17,20 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="false" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             Postagens
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul>
-                            <li><a [routerLink]="'/homeusuario'">Todas</a></li>
-                            <li><a [routerLink]="'postId'">Busca</a></li>
-                            <li><a [routerLink]="'postInsert'">Nova</a></li>
-                            <li><a [routerLink]="'postUpdate'" [hidden]="adm">Alteração</a></li>
-                            <li><a [routerLink]="'postDelete'" [hidden]="adm">Deletar</a></li>
+                            <li [routerLink]="'/homeusuario'">Todas</li>
+                            <li [routerLink]="'postId'">Busca</li>
+                            <li [routerLink]="'postInsert'">Nova</li>
+                            <li [routerLink]="'postUpdate'" [hidden]="adm">Alteração</li>
+                            <li [routerLink]="'postDelete'" [hidden]="adm">Deletar</li>
                         </ul>
                     </div>
                 </div>
@@ -42,8 +38,7 @@
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-link  " type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Usuarios
                         </button>
                     </h2>
@@ -51,11 +46,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioAll'">Todas</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioId'">Busca por Id</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioNome'">Busca por Nome</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioUpdate'" [hidden]="adm">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'usuarioDelete'" [hidden]="adm">Deletar</a></li>
+                            <li [routerLink]="'usuarioAll'">Todas</li>
+                            <li [routerLink]="'usuarioId'">Busca por Id</li>
+                            <li [routerLink]="'usuarioNome'">Busca por Nome</li>
+                            <li [routerLink]="'usuarioUpdate'" [hidden]="adm">Alteração</li>
+                            <li [routerLink]="'usuarioDelete'" [hidden]="adm">Deletar</li>
                         </ul>
                     </div>
                 </div>
@@ -63,8 +58,7 @@
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link  " type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Comunidades
                         </button>
                     </h2>
@@ -72,11 +66,11 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeAll'">Todas</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeId'">Busca por Id</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeInsert'">Nova</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeUpdate'" [hidden]="adm">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'comunidadeDelete'" [hidden]="adm">Deletar</a></li>
+                            <li [routerLink]="'comunidadeAll'">Todas </li>
+                            <li [routerLink]="'comunidadeId'">Busca por Id </li>
+                            <li [routerLink]="'comunidadeInsert'">Nova </li>
+                            <li [routerLink]="'comunidadeUpdate'" [hidden]="adm">Alteração </li>
+                            <li [routerLink]="'comunidadeDelete'" [hidden]="adm">Deletar </li>
                         </ul>
                     </div>
                 </div>
@@ -84,8 +78,7 @@
             <div class="card">
                 <div class="card-header" id="headingFour">
                     <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button class="btn btn-link  " type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             Categorias
                         </button>
                     </h2>
@@ -93,47 +86,53 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaAll'">Todas</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaId'">Busca</a></li>
-                            <li> <a class="dropdown-item" [routerLink]="'categoriaInsert'" [hidden]="adm">Nova</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaUpdate'" [hidden]="adm">Alteração</a></li>
-                            <li><a class="dropdown-item" [routerLink]="'categoriaDelete'" [hidden]="adm">Deletar</a></li>
+                            <li [routerLink]="'categoriaAll'">Todas </li>
+                            <li [routerLink]="'categoriaId'">Busca </li>
+                            <li [routerLink]="'categoriaInsert'" [hidden]="adm">Nova </li>
+                            <li [routerLink]="'categoriaUpdate'" [hidden]="adm">Alteração </li>
+                            <li [routerLink]="'categoriaDelete'" [hidden]="adm">Deletar </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="card">
-                    <div class="card-header" id="headingFive">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link  " type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 Comentarios
                             </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <ul>
-                                <li> <a class="dropdown-item" [routerLink]="'comentarioAll'">Todas</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioId'" [hidden]="adm">Busca</a></li>
-                                <li> <a class="dropdown-item" [routerLink]="'comentarioInsert'" [hidden]="adm"> Nova</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioUpdate'" [hidden]="adm">Alteração</a></li>
-                                <li><a class="dropdown-item" [routerLink]="'comentarioDelete'" [hidden]="adm">Deletar</a></li>
-                            </ul>
-                        </div>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul>
+                            <li [routerLink]="'comentarioAll'">Todas </li>
+                            <li [routerLink]="'comentarioId'" [hidden]="adm">Busca </li>
+                            <li [routerLink]="'comentarioInsert'" [hidden]="adm"> Nova </li>
+                            <li [routerLink]="'comentarioUpdate'" [hidden]="adm">Alteração </li>
+                            <li [routerLink]="'comentarioDelete'" [hidden]="adm">Deletar </li>
+                        </ul>
                     </div>
                 </div>
-           
+            </div>
+            <div class="card">
+                <div class="card-header botaosair" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link sair " type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" (click)="sair()" aria-controls="collapseFive">
+                            Sair
+                            </button>
+                    </h2>
+                </div>
+            </div>
+
         </div>
 
 
 
-        <!--divisóriaiaushdisauhdpiasuhdpsiauofhdpsaiodfuh-->
-        
-       
 
-</div>
-<div class="grade" style="width: 75%;">
-    <router-outlet></router-outlet>
-</div>
+
+    </div>
+    <div class="grade rota" style="width: 75%;">
+        <router-outlet></router-outlet>
+    </div>
 </div>

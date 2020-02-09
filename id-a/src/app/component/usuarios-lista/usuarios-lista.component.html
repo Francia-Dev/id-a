@@ -1,12 +1,38 @@
-<div>
-    <div *ngFor="let item of usuario">
+<!-- <div class="lista">
+    <h1>Usuarios Id.a</h1>
+    <div *ngFor="let item of usuario" class="row">
         <div class="card">
-            <p class="card-title">Nome: {{item.nome}}</p>
-            <p *ngIf="item.post != null">Quantidade de projetos: {{item.post.length}}</p>
+            <div class="card-img-top col-3">
+                <img src="./../../../assets/fotoPerfil.png" alt="">
+            </div>
+            <div class="card-body col-9">
+                <p class="card-title">Nome: {{item.nome}}</p>
+                <p *ngIf="item.post != null">Quantidade de projetos: {{item.post.length}}</p>
+            </div>
+            <div class="botoesAlteracoes">
+                <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioUpdate', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Alterar</button>
+                <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioDelete', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Deletar</button>
+            </div>
         </div>
-        <div class="botoesAlteracoes">
-            <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioUpdate', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Alterar</button>
-            <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioDelete', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Deletar</button>
+    </div>
+</div> -->
+<div class="lista">
+    <h1>Usuarios Id.a</h1>
+    <div class="card mb-3" *ngFor="let item of usuario" style="max-width: 900px;">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img src="./../../../assets/fotoPerfil.png" class="card-img" alt="...">
+            </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h5 class="card-title"> <strong>Nome:</strong> {{item.nome}}</h5>
+                    <p class="card-text" *ngIf="item.post != null">Projetos abertos: {{item.post.length}}</p>
+                    <div class="botoesAlteracoes">
+                        <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioUpdate', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Alterar</button>
+                        <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/usuarioDelete', item.idUsuario]" *ngIf="item?.idUsuario == userId || userName == 'adminMaster'">Deletar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

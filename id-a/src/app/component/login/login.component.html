@@ -1,20 +1,33 @@
-<div class="conteudo">
-    <div class="formulario col-8">
-        <label for="emailLogin">Email:</label>
-        <br>
-        <input type="text" [(ngModel)]="usuario.email" id="emailLogin">
-        <div style="visibility: hidden" id="erroEmail">⚠ Campo obrigatório.</div>
-        <label for="senhaLogin">Senha:</label>
-        <br>
-        <input type="password" [(ngModel)]="usuario.senha" id="senhaLogin">
-        <div style="visibility: hidden" id="erroSenha">⚠ Campo obrigatório.</div>
-        <button (click)="verificar()" class="botaobuscar">Logar</button> 
-        <p>Esqueceu a senha? <strong> Clique aqui</strong> para recuperar.</p>
-    </div>
-    <div class="texto col-4">
-        <h3>Não tem conta?</h3>
-        <h2>Junte-se a nós.</h2>
-        <p>Estamos aqui para te ajudar a tornar a sua ideia real, junte-se à comunidade, é o primeiro passo para dar vida ao seu projeto!</p>
+<div class="caixa">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" [routerLink]="'/cadastro'">Cadastro</a>
+        </li>
+
+    </ul>
+    <div class="tab-content centro" id="myTabContent">
+
+        <img src="./../../../assets/logoSimples-laranja.png" alt="">
+
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+            <div class="formulario">
+
+
+                <input type="text" [(ngModel)]="usuario.email" id="emailLogin" placeholder="Email">
+                <div style="visibility: hidden" id="erroEmail">⚠ Campo obrigatório.</div>
+
+
+                <input type="password" [(ngModel)]="usuario.senha" id="senhaLogin" placeholder="Senha">
+                <div style="visibility: hidden" id="erroSenha">⚠ Campo obrigatório.</div>
+                <button (click)="verificar()" class="botaobuscar">Logar</button>
+            </div>
+
+
+        </div>
 
     </div>
 </div>

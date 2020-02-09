@@ -1,17 +1,29 @@
 .card {
     display: inline-block;
-    height: 20rem;
-    width: 21%;
-    margin: 2%;
+    height: 25rem;
+    width: 20%;
+    margin: 0 2.5%;
     vertical-align: top;
-    padding: 1%
+}
+
+.principal {
+    height: 2rem;
 }
 
 .card img {
     width: 100%;
 }
 
-.conteudo {
+.card-text {
+    height: 7em;
+    overflow: hidden;
+}
+
+.botaobuscar {
+    width: 50%;
+}
+
+.botoesAlteracoes {
     width: 80%;
-    margin: 0 auto
+    margin: 0 auto;
 }

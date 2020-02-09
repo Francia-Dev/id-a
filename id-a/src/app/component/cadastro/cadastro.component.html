@@ -1,65 +1,114 @@
-<div class="container">
-    <h1>
-        Cadastro
-    </h1>
-    <form [formGroup]="angForm" novalidate class="centro">
-        <div class="form-group">
-            <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome" placeholder="Nome completo">
-        </div>
-        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-            <div *ngIf="angForm.controls['name'].errors.required">
-                Nome requerido.
-            </div>
-        </div>
-        <div class="form-group">
+<div class="caixa">
 
-            <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email" placeholder="Email">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+        <li class="nav-item">
+
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false" [routerLink]="'/login'">Login </a>
+
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Cadastro</a>
+
+        </li>
+    </ul>
+
+    <div class="tab-content centro" id="myTabContent">
+
+        <img src="./../../../assets/logoSimples-roxo.png" alt="">
+
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            <form [formGroup]="angForm" novalidate>
+
+                <div class="form-group">
+
+                    <input class="form-control" formControlName="name" type="text" [(ngModel)]="usuario.nome" placeholder="Nome completo">
+
+                </div>
+
+                <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+
+                    <div *ngIf="angForm.controls['name'].errors.required">
+                        Nome requerido.
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" formControlName="address" type="email" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" [(ngModel)]="usuario.email" placeholder="Email">
+
+                </div>
+
+                <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
+                    Exemplo: ex@email.com
+
+                    <div *ngIf="angForm.controls['address'].errors.required">
+                        Email requerido.
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone" placeholder="Telefone">
+
+                </div>
+
+                <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
+                    Telefone deve conter de 8 a 11 números
+
+                    <div *ngIf="angForm.controls['tel'].errors.required">
+                        Telefone requerido.
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha *deve conter ao menos 1 caracter especial (@ # $ % &)">
+
+                </div>
+
+                <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+                    Senha Fraca
+
+                    <div *ngIf="angForm.controls['password'].errors.required">
+                        Senha requerido.
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Confirmar senha">
+
+                </div>
+
+                <div *ngIf="angForm.controls['passwordValidate'].invalid && (angForm.controls['passwordValidate'].dirty || angForm.controls['passwordValidate'].touched)" class="alert alert-danger">
+                    Senhas não coincidem.
+
+                    <div *ngIf="angForm.controls['passwordValidate'].errors.required">
+                        Senha igual requerida.
+                    </div>
+
+                </div>
+
+                <input type="button" value="Verificar Senhas" (click)="btnClickComment()" class="btn botaobuscar" id="BotaoVerifica">
+
+                <button id="BotaoConfirma" style="display: none;" (click)="cadastrar()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
+                  Confirar Cadastro
+              </button>
+
+                <div id="statusLogin" style="visibility: hidden">Cadastro confirmado</div>
+
+            </form>
+
+
         </div>
-        <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
-            Exemplo: ex@email.com
-            <div *ngIf="angForm.controls['address'].errors.required">
-                Email requerido.
-            </div>
-        </div>
-        <div class="form-group">
-            <input class="form-control" formControlName="tel" type="tel" pattern="[0-9]{8,11}$" [(ngModel)]="usuario.telefone" placeholder="Telefone">
-        </div>
-        <div *ngIf="angForm.controls['tel'].invalid && (angForm.controls['tel'].dirty || angForm.controls['tel'].touched)" class="alert alert-danger">
-            Telefone deve conter de 8 a 11 números
-            <div *ngIf="angForm.controls['tel'].errors.required">
-                Telefone requerido.
-            </div>
-        </div>
-        <div class="form-group">
-            <input class="form-control" formControlName="password" type="password" minlength="10" [(ngModel)]="usuario.senha" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Senha *deve conter ao menos 1 caracter especial (@ # $ % &)">
-        </div>
-        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
-            Senha Fraca
-            <div *ngIf="angForm.controls['password'].errors.required">
-                Senha requerido.
-            </div>
-        </div>
-        <div class="form-group">
-            <input class="form-control" formControlName="passwordValidate" type="text" type="password" [(ngModel)]="senhaConfirm" pattern="((?=.*[@,#,$,%,&]).{10,64})" placeholder="Confirmar senha">
-        </div>
-        <div *ngIf="angForm.controls['passwordValidate'].invalid && (angForm.controls['passwordValidate'].dirty || angForm.controls['passwordValidate'].touched)" class="alert alert-danger">
-            Senhas não coincidem.
-            <div *ngIf="angForm.controls['passwordValidate'].errors.required">
-                Senha igual requerida.
-            </div>
-        </div>
-        <input type="button" value="Verificar Senhas" (click)="btnClickComment()" class="btn botaobuscar" id="BotaoVerifica">
-        <br>
-        <button id="BotaoConfirma" style="visibility: hidden; width: 60%;" (click)="cadastrar()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
-              Cadastrar
-          </button>
-        <br>
-        <br>
-        <button id="BotaoConfirma2" style="visibility: hidden; width: 60%;" (click)="atualizar()" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success botaobuscar">
-              Atualizar
-          </button>
-        <br><br>
-        <div id="statusLogin" style="visibility: hidden">Cadastro confirmado</div>
-    </form>
-    <br />
+
+    </div>
 </div>

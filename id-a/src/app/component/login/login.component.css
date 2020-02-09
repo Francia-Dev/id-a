@@ -1,57 +1,66 @@
-.conteudo {
-    width: 80%;
-    margin: 0 auto;
+.caixa {
+    width: 30%;
+    margin: 2em auto 3em;
 }
 
-.formulario {
-    display: inline-block;
-}
-
-.texto {
-    display: inline-block;
-    padding: 3em;
-    border: gray solid 1px;
-    margin: 3em 0;
-    font-size: 21px;
-    text-align: center;
-}
-
-h3 {
-    color: #6B3EB8;
-    font-size: 23px;
-}
-
-h2 {
-    color: orange;
-}
-
-input {
-    width: 80%;
-    border: none;
-    border-bottom: #6B3EB8 2px solid;
-    font-size: 20px;
-    color: orange;
-}
-
-.botaobuscar {
+.caixa li {
     width: 50%;
+    text-align: center;
+    font-size: 25px;
 }
 
-label {
-    color: #6B3EB8;
-    font-size: 25px;
+img {
+    width: 70%;
+    margin: 0 15% 3em;
+}
+
+.centro {
+    border: rgb(0, 0, 0, 0.1) solid 1px;
+    margin: 0 auto;
+    background-color: #f7f7f7f7;
+    padding: 2rem;
+    padding-bottom: 0;
+    border-top: none;
 }
 
 #erroEmail,
 #erroSenha {
     text-align: right;
     font-size: 18px;
-    margin: 5px 20%;
+    margin: 5px;
     color: rgb(189, 4, 4);
-    font-weight: bold;
 }
 
-.formulario p {
-    margin: 3em 0;
-    font-size: 14px;
+.formulario {
+    margin-top: 1em;
+}
+
+input {
+    margin-bottom: 0;
+}
+
+.botaobuscar {
+    margin: 1em auto 2em;
+    width: 100%;
+    font-size: 20px;
+}
+
+#profile-tab {
+    border-bottom: rgb(0, 0, 0, 0.03) 1px solid;
+    color: gray;
+}
+
+#profile-tab:hover {
+    color: orange;
+    text-decoration: none;
+    ;
+}
+
+.nav-item a {
+    border-bottom-color: #f7f7f7f7;
+}
+
+.nav-link.active {
+    background-color: #f7f7f7f7;
+    color: #7006BC
 }

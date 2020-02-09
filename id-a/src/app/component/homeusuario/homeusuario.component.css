@@ -1,9 +1,74 @@
-li{
-    list-style: none;
-    margin:none
+h3 {
+    font-size: 17px;
+    display: inline-block;
+}
+
+#exibirNome {
+    color: orange;
+    font-size: 25px;
+    margin-left: .8rem;
+    display: inline-block;
+}
+
+#exibirNome::first-letter {
+    text-transform: uppercase;
+}
+
+.botaosair {
+    padding: 0 1.25rem;
+    background-color: orange!important;
+}
+
+.sair {
+    background-color: none;
+    border: none;
+    color: white!important;
+    font-size: 17px;
+}
+
+.sair:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    ;
+}
+
+.menuUsuario {
+    height: 90%;
+    margin: 5% auto;
+}
+
+.card {
+    border: none;
 }
 
 ul {
-    padding: 0
+    list-style-type: none;
+    text-align: left;
+    font-size: 18px;
+    color: #7006BC;
+    padding: 0;
+    margin-bottom: 0;
 }
 
+li {
+    border-bottom: rgb(215, 207, 230, 0.5) 1x solid;
+}
+
+li:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+.card-header {
+    background-color: rgb(215, 207, 230, 0.5);
+}
+
+.card-header button {
+    text-decoration: none;
+    font-size: 20px;
+    color: #7006BC;
+}
+
+.rota {
+    margin-top: 4rem;
+}

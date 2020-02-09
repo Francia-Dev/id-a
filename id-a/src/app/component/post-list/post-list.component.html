@@ -1,26 +1,32 @@
-<div class="all" style="text-align: center">
+<!-- <div class="all" style="text-align: center">
     <div *ngIf="post != null">
         <div class="row caixa" *ngFor="let item of post.slice().reverse(); let i = index">
             <div class="card col-8" [routerLink]="['homeusuario/postId', item?.idPostagem]">
                 <div class="conteudoInterno">
                     <div class="englobar">
                         <div class="row">
-                            <img class="card-img imagemCard" src="{{item?.linkimg}}" />
-                            <div class="informacoes">
-                                <div class="linhaDeCima">
-                                    <h2 class="conteudoCard">{{item?.titulo}}</h2>
-                                    <div class="numero conteudoCard" *ngIf="post != null">
-                                        <p class="conteudoCard">{{item?.idPostagem}}</p>
+                            <div class="imagempost card-img" style="display: inline-block;">
+                                <div *ngIf="item.linkimg == ''; else senao">
+                                    <img src="./../../../assets/instagram.png" alt="">
+                                </div>
+                                <ng-template #senao>
+                                    <img class="" src="{{item?.linkimg}}" /></ng-template>
+                            </div>
+                            <div class="informacoes card-body">
+                                <div class="linhaDeCima card-title">
+                                    <h2 class="">{{item?.titulo}}</h2>
+                                    <div class="numero " *ngIf="post != null">
+                                        <p class="">{{item?.idPostagem}}</p>
                                     </div>
+                                    <p class="">{{item?.usuario?.nome}}</p>
+                                    <p class="">{{item.dataInclusao}}</p>
                                 </div>
 
-                                <p class="conteudoCard">{{item?.usuario?.nome}}</p>
-                                <p class="conteudoCard">{{item.dataInclusao}}</p>
 
                             </div>
                         </div>
 
-                        <div class="content conteudoTexto">
+                        <div class="content conteudoTexto ccard-text">
                             {{item.texto}}
                         </div>
                     </div>
@@ -48,4 +54,74 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div *ngIf="post != null">
+    <div class="caixa row" *ngFor="let item of post.slice().reverse(); let i = index">
+
+        <div class="conteudo col-8" [routerLink]="['homeusuario/postId', item?.idPostagem]">
+
+            <div class="header">
+                <div class="imagemPost">
+
+                    <div *ngIf="item.linkimg == ''; else senao">
+                        <img src="./../../../assets/imagemPrev.png" alt="">
+                    </div>
+                    <ng-template #senao>
+                        <img class="" src="{{item?.linkimg}}" />
+                    </ng-template>
+
+                </div>
+
+                <div class="titulo">
+
+                    <h2 class="">{{item?.titulo}}</h2>
+                    <div class="numero " *ngIf="post != null">
+                        <p class="">#{{item?.idPostagem}}</p>
+                    </div>
+
+
+
+                </div>
+
+                <div class="botoesinternos">
+                    <button class="botaobuscar altdel" [routerLink]="['homeusuario/postUpdate', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">⭮    Alterar</button><br>
+                    <button class="botaobuscar altdel" [routerLink]="['homeusuario/postDelete', item?.idPostagem]" *ngIf="item?.usuario?.idUsuario == this.comentario.usuario.idUsuario || this.comentario.usuario.nome == 'adminMaster'">🗑 Deletar</button>
+                </div>
+            </div>
+            <div class="texto">
+
+                {{item.texto}}
+            </div>
+            <div class="rodape">
+                <p class="basettl"><strong>por:</strong> {{item?.usuario?.nome}}</p>
+                <p class="data basettl">{{item.dataInclusao}}</p>
+            </div>
+        </div>
+
+
+        <div class="comentarios col-4">
+
+            <div class="lista">
+
+                <div *ngFor="let item of item.comentario">
+                    <div class="card">
+                        <p class="nomeComentario">{{item.usuario?.nome}}</p>
+                        <p class="corpoComentario">{{item?.texto}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="novoComentario">
+                <input type="text" [(ngModel)]="novoComentario" class="textocomentario" placeholder="Comentar..." />
+                <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario(item?.idPostagem)">✉</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>

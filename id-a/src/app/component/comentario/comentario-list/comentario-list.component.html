@@ -1,15 +1,14 @@
 <div>
-    <h1>Lista de Comentários</h1>
-    <div *ngFor="let item of comentario">
+    <!-- <h1>Lista de Comentários</h1> -->
+    <div *ngFor="let item of comentario" class="caixa">
         <div *ngIf="item?.usuario?.idUsuario == userId || userName == 'adminMaster'">
             <div class="card">
-                <p>Comentario: {{item.texto}}</p>
-                <p>Autor: {{item.usuario?.nome}}</p>
-                <p>Projeto: {{item.post?.titulo}}</p>
-                <div class="botoesAlteracoes">
-                    <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/comentarioUpdate', item.idComentario]">Alterar</button>
-                    <button class="col-6 botaobuscar" [routerLink]="['/homeusuario/comentarioDelete', item.idComentario]">Deletar</button>
-                </div>
+                <q>Comentario: {{item.texto}}</q>
+                <cite>por: {{item.usuario?.nome}} - projeto: {{item.post?.titulo}}</cite>
+            </div>
+            <div class="botoesAlteracoes">
+                <button class="botaobuscar" [routerLink]="['/homeusuario/comentarioUpdate', item.idComentario]">Alterar</button>
+                <button class="botaobuscar" [routerLink]="['/homeusuario/comentarioDelete', item.idComentario]">Deletar</button>
             </div>
         </div>
     </div>
