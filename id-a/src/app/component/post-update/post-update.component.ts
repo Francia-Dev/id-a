@@ -4,6 +4,7 @@ import { Post } from 'src/app/model/post';
 import { PostService } from 'src/app/service/post.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Globals } from 'src/app/model/globals';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-post-update',
@@ -13,7 +14,7 @@ import { Globals } from 'src/app/model/globals';
 })
 export class PostUpdateComponent implements OnInit {
 
-  post: Post = new Post(0,"","","","", null, null, null);
+  post: Post = new Post(0,"","","","", new Usuario(0, "", "", "", "", null, null, null), null, null);
   id: number;
   angForm: FormGroup;
   userName: string;
@@ -46,6 +47,7 @@ export class PostUpdateComponent implements OnInit {
 
   alterar(){
     if (this.post.idPostagem != 0){
+      this.post.usuario.idUsuario = parseInt(localStorage.getItem("usuarioId"))
       this.postService.update(this.post).subscribe((postOut: Post) =>{
       this.post = postOut;
       alert("Postagem alterada com sucesso!");
