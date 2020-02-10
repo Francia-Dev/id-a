@@ -36,6 +36,6 @@ export class PostInsertComponent implements OnInit {
   }
 
   previa(){
-    document.getElementById("previewImagem").innerHTML = `<img src='${this.post.linkimg}'>`;
+    document.getElementById("previewImagem").innerHTML = `<img src='${this.post.linkimg}' style='width: 11em; height: 11em; object-fit: cover; object-position: center;'>`;
   }
 }

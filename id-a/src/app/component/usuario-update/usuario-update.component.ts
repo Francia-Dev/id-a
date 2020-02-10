@@ -44,20 +44,30 @@ export class UsuarioUpdateComponent implements OnInit {
     }
     this.userName = Globals.USUARIO.nome;
   }
+ 
   alterar(){
     if (this.usuario.idUsuario != 0){
-      this.usuarioService.update(this.usuario).subscribe((usuarioOut: Usuario) =>{
-      this.usuario = usuarioOut;
-
-
       
-      console.log(this.usuario);
-      alert("Usuario alterado com sucesso!");
-      Globals.USUARIO = this.usuario;
-      localStorage.setItem("usuarioNome", String(Globals.USUARIO.nome));
-      this.router.navigate(['/homeusuario/usuarioAll']);
+      this.usuarioService.getById(this.usuario.idUsuario).subscribe((usuarioId: Usuario) =>{
+      
+        this.usuario.email = usuarioId.email;
+        this.usuario.senha = usuarioId.senha;   
 
-      })
+        this.update();
+      });
     } 
   }
+
+  update(){
+    this.usuarioService.update(this.usuario).subscribe((usuarioOut: Usuario) =>{
+    this.usuario = usuarioOut;
+        
+    
+    alert("Usuario alterado com sucesso!");
+    Globals.USUARIO = this.usuario;
+    localStorage.setItem("usuarioNome", String(Globals.USUARIO.nome));
+    this.router.navigate(['/homeusuario/usuarioAll']);
+  });
+  }
+
 }

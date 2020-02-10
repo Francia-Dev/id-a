@@ -176,3 +176,10 @@ hr {
     width: 80%;
     margin: 0 auto;
 }
+
+.separacao {
+    margin: 1rem auto;
+    width: 30%;
+    border: orange solid 2px;
+    border-radius: 100%
+}
