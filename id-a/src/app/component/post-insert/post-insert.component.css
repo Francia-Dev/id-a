@@ -4,6 +4,16 @@
     
     .formPost input {
         width: 90%;
+        margin-bottom: 0
+    }
+    
+    #previewBotao {
+        margin-top: 1em
+    }
+    
+    .txtLabel,
+    .aviso {
+        display: inline-block
     }
     
     .content {
@@ -24,8 +34,7 @@
     }
     
     .linkimg {
-        margin-left: 5%;
-        margin-top: 2%
+        margin: 5%;
     }
     
     #previewImagem img {
@@ -49,4 +58,8 @@
         padding: 1rem 0;
         font-family: 'Noticia Text', serif;
         margin-bottom: 1em;
+    }
+    
+    textarea {
+        max-height: 239px;
     }

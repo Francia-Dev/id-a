@@ -66,12 +66,12 @@ h3 {
 
 .carousel-control-next:hover,
 .carousel-control-prev:hover {
-    background-color: black
+    background-color: transparent
 }
 
 .carousel-control-next:active,
 .carousel-control-prev:active {
-    background-color: orange
+    background-color: transparent
 }
 
 .carousel-inner {
@@ -139,6 +139,11 @@ h3 {
 
 .imagem2 img {
     height: 25rem;
+    display: inline-block;
+}
+
+.imagem2 .texto {
+    display: inline-block
 }
 
 .imagem3 img {
