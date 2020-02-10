@@ -1,7 +1,7 @@
 <div>
     <label for="nomeUsuario">Busca por Nome</label>
-    <input type="text" id="nomeUsuario" placeholder="Nome" [(ngModel)]="nomeUsuario">
-    <button id="btnPost" (click)="btnClickNome()">Buscar</button>
+    <input type="text" id="nomeUsuario" placeholder="Informe o nome para continuar" [(ngModel)]="nomeUsuario">
+    <button id="btnPost" class="botaobuscar" (click)="btnClickNome()">Buscar</button>
 
     <br><br>
     <br>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <ng-template #elseBlock>
-        <h3>Informe o nome para continuar...</h3>
+
         <img src="./../../../assets/pesquisa.gif">
     </ng-template>
 </div>

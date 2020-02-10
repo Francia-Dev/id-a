@@ -1,17 +1,84 @@
 <div style="text-align: center;">
     <input id="txtPost" class="form-control procurar" type="number" [(ngModel)]="id" placeholder="Id" />
-    <button id="btnPost" class="btn btn-outline-success my-2 my-sm-0 botaobuscar" (click)="btnClick()">Buscar id</button>
+    <button id="btnPost" class="btn botaobuscar" (click)="btnClick()">Buscar id</button>
     <input id="txtPosts" class="form-control procurar" type="text" [(ngModel)]="palavra" placeholder="Palavra" />
-    <button id="btnPosts" class="btn btn-outline-success my-2 my-sm-0 botaobuscar" (click)="btnClickPalavra()">Buscar palavra</button>
-    <br><br>
-    <div id="unicoPost">
+    <button id="btnPosts" class="btn botaobuscar" (click)="btnClickPalavra()">Buscar palavra</button>
+
+    <div id="unicoPost" style="margin-top: 1em;">
         <div *ngIf="id != null; else elseBlock">
             <div *ngIf="post != null">
-                <div class="ttl">{{post.titulo}}</div>
-                <div><label *ngIf="post.idPostagem != null"><img src="{{post.linkimg}}" /></label> </div>
-                <div class="content">{{post.texto}} </div>
-                <div>Autor: {{post?.usuario?.nome}}</div>
-                <div class="numero">{{post.dataInclusao}} </div>
+
+                <div class="conteudo">
+                    <label style="display: none;" *ngIf="post.idPostagem != null"></label>
+
+                    <div class="header row">
+                        <div class="col-3">
+                            <div class="imagemPost">
+
+                                <div *ngIf="post.linkimg == ''; else senao">
+                                    <img src="./../../../assets/imagemPrev.png" alt="">
+                                </div>
+                                <ng-template #senao>
+                                    <img class="" src="{{post.linkimg}}" />
+                                </ng-template>
+
+                            </div>
+                        </div>
+
+                        <div class="titulo col-9">
+
+                            <h2 class="" style="display: block;">{{post.titulo}}</h2>
+
+
+
+
+                            <p class=" basettl"><strong>por:</strong> {{post?.usuario?.nome}}</p>
+                            <p class="data basettl"><strong>data:</strong>{{post.dataInclusao}}</p>
+                        </div>
+
+                    </div>
+                    <div class="texto">
+                        {{post.texto}}
+
+                    </div>
+
+
+                </div>
+                <div class="novoComentario">
+                    <input type="text" [(ngModel)]="novoComentario" class="textocomentario" placeholder="Comentar..." />
+                    <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario(post?.idPostagem)">✉</button>
+                </div>
+                <div class="comentarios">
+
+                </div>
+
+                <div class="lista">
+
+                    <div *ngFor="let item of post?.comentario.slice().reverse()">
+                        <div class="card">
+                            <q class="corpoComentario">{{item?.texto}}</q>
+                            <cite class="nomeComentario">{{item.usuario?.nome}}</cite>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- <div class="card">
+                    <div><label style="display: none;" *ngIf="post.idPostagem != null"></label>
+
+                        <div class="imagemPost card-img ">
+                            <img src="{{post.linkimg}}" /></div>
+                        <div class="card-title">
+                            <h1>{{post.titulo}}</h1>
+                            <h2 class="">Autor: {{post?.usuario?.nome}}</h2>
+                            <h2 class="numero ">{{post.dataInclusao}} </h2>
+                        </div>
+                    </div>
+                    <div class="content">{{post.texto}} </div>
+                </div>
                 <div *ngFor="let item of post?.comentario">
                     <div class="">
                         <p class="">{{item.usuario?.nome}}</p>
@@ -20,50 +87,128 @@
                 </div>
                 <div class="">
                     <input type="text" [(ngModel)]="novoComentario" class="textocomentario" placeholder="Comentar..." />
-                    <button [id]="post?.idPostagem" class="enviarcomentario" (click)="enviarComentario(post?.idPostagem)">Comentar</button>
-                </div>
+                    <button [id]="post?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario(post?.idPostagem)">Comentar</button>
+                </div> -->
+
             </div>
+
         </div>
+
         <ng-template #elseBlock>
             <h3>Informe o Id para continuar...</h3>
             <img src="./../../../assets/pesquisa.gif">
         </ng-template>
     </div>
-    <div id="listaPosts">
+    <!--Por nome-->
+
+    <div id="listaPosts" style="margin-top: 1em;">
+
         <div *ngIf="posts != null">
-            <div class="" *ngFor="let item of posts.slice().reverse(); let i = index">
 
-                <img class="card-img" src="{{item?.linkimg}}" />
+            <div class="conteudo">
 
-                <div class="card-body">
-                    <div class="numero" *ngIf="post != null">
-                        <p>{{item?.idPostagem}}</p>
-
-                    </div>
-                    <div class="card-title">
-                        {{item?.titulo}} {{item?.usuario?.nome}}
-                        <p>{{item.dataInclusao}}</p>
-                    </div>
-                    <div class="content">
-                        {{item.texto}}
-                    </div>
-                </div>
+                <div *ngFor="let item of posts.slice().reverse(); let i = index">
 
 
-                <div class="comentarios">
-                    <div *ngFor="let item of item.comentario">
-                        <div class="card">
-                            <p class="nomeComentario">{{item.usuario?.nome}}</p>
-                            <p class="corpoComentario">{{item?.texto}}</p>
+                    <div class="header row">
+                        <div class="col-3">
+                            <div class="imagemPost">
+
+                                <div *ngIf="item.linkimg == ''; else senao">
+                                    <img src="./../../../assets/imagemPrev.png" alt="">
+                                </div>
+                                <ng-template #senao>
+                                    <img class="" src="{{item?.linkimg}}" />
+                                </ng-template>
+
+                            </div>
                         </div>
+
+                        <div class="titulo col-9">
+
+                            <h2 class="" style="display: block;">{{item?.titulo}}</h2>
+                            <div class="numero " *ngIf="post != null">
+                                <p class="">#{{item?.idPostagem}}</p>
+                            </div>
+
+
+
+                            <p class=" basettl"><strong>por:</strong> {{item?.usuario?.nome}}</p>
+                            <p class="data basettl"><strong>data:</strong>{{item.dataInclusao}}</p>
+                        </div>
+
                     </div>
-                </div>
-                <div class="novocomentario">
-                    <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
-                    <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario2(item?.idPostagem)">Comentar</button>
+                    <div class="texto">
+                        {{item.texto}}
+
+                    </div>
+
 
                 </div>
             </div>
+
+
+
+            <div class="comentarios">
+
+
+
+                <div *ngFor="let item of item?.comentario">
+                    <div class="lista">
+
+                        <div class="card">
+                            <cite class="nomeComentario">{{item.usuario?.nome}}</cite>
+                            <q class="corpoComentario">{{item?.texto}}</q>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="novoComentario">
+                <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
+                <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario2(item.idPostagem)">✉</button>
+            </div>
+
+            <!-- <div id="listaPosts">
+                <div *ngIf="posts != null">
+                    <div class="" *ngFor="let item of posts.slice().reverse(); let i = index">
+
+                        <img class="card-img" src="{{item?.linkimg}}" />
+
+                        <div class="card-body">
+                            <div class="numero" *ngIf="post != null">
+                                <p>{{item?.idPostagem}}</p>
+
+                            </div>
+                            <div class="card-title">
+                                {{item?.titulo}} {{item?.usuario?.nome}}
+                                <p>{{item.dataInclusao}}</p>
+                            </div>
+                            <div class="content">
+                                {{item.texto}}
+                            </div>
+                        </div>
+
+
+                        <div class="comentarios">
+                            <div *ngFor="let item of item.comentario">
+                                <div class="card">
+                                    <p class="nomeComentario">{{item.usuario?.nome}}</p>
+                                    <p class="corpoComentario">{{item?.texto}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="novocomentario">
+                            <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
+                            <button [id]="item?.idPostagem" class="enviarcomentario" (click)="enviarComentario2(item?.idPostagem)">Comentar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
         </div>
     </div>
-</div>

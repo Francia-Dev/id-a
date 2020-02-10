@@ -14,28 +14,22 @@
 textarea {
     width: 90%;
     vertical-align: top;
-    border: #6B3EB8 2px solid;
     font-size: 20px;
     color: orange;
     display: inline-block;
     width: 100%;
     margin-bottom: 1em;
     height: 200px;
+    max-height: 200px;
+    ;
 }
 
 .formTtl {
     margin-bottom: 2em;
 }
 
-
-input {
-    border: none;
-    border-bottom: #6B3EB8 2px solid;
-    font-size: 20px;
-    color: orange;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1em;
+.mudarId {
+    width: 16.6%;
 }
 
 .botaobuscar {
@@ -48,11 +42,11 @@ input {
 }
 
 .linkimg {
-margin-left: 5%;
-margin-top: 2%
+    margin-left: 5%;
+    margin-top: 2%
 }
 
-#previewImagem img{
+#previewImagem img {
     max-width: 100%;
     border-radius: 10%;
 }

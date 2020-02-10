@@ -28,6 +28,18 @@ body {
 
 /*botões*/
 
+.button:focus,
+li:focus,
+.nav-link:focus,
+.form-control:focus {
+    outline: transparent 1px solid!important;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border: rgb(215, 207, 230) 2px solid;
+}
+
 .botaobuscar {
     border-radius: 10px;
     border: 1px solid #7006BC;
@@ -39,6 +51,7 @@ body {
     border-color: #7006BC;
     color: white;
     background-color: #7006BC;
+    cursor: pointer;
 }
 
 .botaobuscarbranco {
@@ -54,6 +67,7 @@ body {
 .botaobuscarbranco:hover {
     background-color: orange;
     color: #7006BC;
+    cursor: pointer;
 }
 
 .botaobuscarbranco:active {
@@ -61,6 +75,11 @@ body {
     background-color: #c583f3;
     box-shadow: none;
     border: #7006BC 1px solid
+}
+
+.botaobuscar:focus,
+.botaobuscarbranco:focus {
+    outline: none;
 }
 
 
@@ -80,7 +99,6 @@ input {
     display: inline-block;
     width: 100%;
     padding: 0 1rem;
-    margin-bottom: 2em;
     border-radius: 20px;
 }
 

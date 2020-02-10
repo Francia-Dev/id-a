@@ -1,17 +1,17 @@
 <div>
     <input id="txtPost" type="text" [(ngModel)]="id" placeholder="Id" />
-    <button id="btnPost" (click)="btnClick()">Buscar</button>
+    <button id="btnPost" class="botaobuscar" (click)="btnClick()">Buscar</button>
     <br><br>
     <div *ngIf="id != null; else elseBlock">
         <div>Comentario: {{comentario.texto}}</div>
         <br>
         <div *ngIf="comentario.usuario != null">Usuario: {{comentario?.usuario?.nome}}</div>
-        <div *ngIf="comentario.post != null">Publicação: {{comentario?.post?.titulo}}</div>    
+        <div *ngIf="comentario.post != null">Publicação: {{comentario?.post?.titulo}}</div>
     </div>
     <ng-template #elseBlock>
-    <h3>Informe o Id para continuar...</h3>
-     <img src="./../../../assets/pesquisa.gif">   
+        <h3>Informe o Id para continuar...</h3>
+        <img src="./../../../assets/pesquisa.gif">
     </ng-template>
     <br>
-    
+
 </div>

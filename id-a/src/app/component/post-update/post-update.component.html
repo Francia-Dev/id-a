@@ -1,9 +1,8 @@
 <div class="content">
-    <h1>Atualizar postagem</h1>
     <div>
-        <div class="col-2 formPost" *ngIf="userName == 'adminMaster'">
+        <div class="mudarId formPost" *ngIf="userName == 'adminMaster'">
             <label for="postId">Id <strong style="color:brown; display: inline-block;" id="erroId">*</strong></label>
-            <input type="text" id="postId" [(ngModel)]="post.idPostagem" >
+            <input type="text" id="postId" [(ngModel)]="post.idPostagem">
         </div>
         <div class="col-3 formPost">
             <label for="postData">Data</label>
@@ -14,7 +13,7 @@
             <input type="text" id="postLinkimg" [(ngModel)]="post.linkimg">
         </div>
         <strong class="col-4" style="display: inline-block; color:brown; text-align: right; font-weight: normal">* Campos marcados são obrigatórios</strong>
-        <div class="col-10">
+        <div class="">
             <label for="postTitulo">Titulo</label>
             <input type="text" id="postTitulo" [(ngModel)]="post.titulo">
         </div>
@@ -22,7 +21,7 @@
             <label for="postTexto">Texto</label>
             <textarea type="text" id="postTexto" [(ngModel)]="post.texto"></textarea>
         </div>
-        
+
         <div>
             <button id="postBotao" class="botaobuscar" (click)="alterar()">Editar Post</button>
         </div>

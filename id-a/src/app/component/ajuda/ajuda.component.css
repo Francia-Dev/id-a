@@ -89,6 +89,7 @@
 .respostas {
     text-align: justify;
     padding: 0 1.5rem;
+    color: orange;
 }
 
 .informacao input {

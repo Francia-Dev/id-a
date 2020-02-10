@@ -1,49 +1,52 @@
+/* .imagemPost {
+    width: 11em;
+    height: 11em;
+    overflow: hidden;
+    margin-right: 1em;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
+} */
+
+
+/* .imagemPost,
 .ttl {
-    font-size: 50px;
-    font-family: 'Noticia Text', serif;
-    color: #6B3EB8;
-    margin: 1rem 0;
-    border-bottom: solid 2px #6B3EB8;
-    width: 80%;
-    margin: 0 auto 1rem;
+    display: inline-block;
 }
 
-img {
-    width: 50%;
-    background-color: #2c2c2c
+.ttl {
+    width: 70%;
+    font-size: 3em;
+    vertical-align: top;
+    text-align: left;
+} */
+
+
+/* .maisInfo {
+    display: inline-block;
+    width: 70%;
 }
+
+.imagemPost img {
+    width: 11em;
+    height: 11em;
+    object-fit: cover;
+    object-position: center;
+} */
 
 .content {
     font-size: 30px;
     padding: 1rem 0;
 }
 
-.conteudo {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 1em;
-}
-
-.numero {
-    margin: 1rem;
-}
-
-.all {
-    background-color: #ffffff
-}
-
-.botaobuscar {
-    border-radius: 15px;
-    border: 1px solid #4b2078;
-    color: #4b2078;
-    font-size: 18px;
-}
-
-.botaobuscar:hover {
-    border-radius: 15px;
-    border-color: #4b2078;
-    color: aliceblue;
-    background-color: #4b2078;
+input {
+    border: rgb(215, 207, 230) 2px solid;
+    font-size: 20px;
+    color: orange;
+    display: inline-block;
+    width: 100%;
+    padding: 0 1rem;
+    border-radius: 20px;
 }
 
 .procurar {
@@ -57,5 +60,108 @@ h3 {
     font-size: 30px;
     text-align: center;
     font-family: 'Noticia Text', serif;
-    color: #490864
+    color: #6B3EB8
+}
+
+
+/*post list config*/
+
+.conteudo {
+    padding: 1em;
+    border: solid 1px rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.imagemPost {
+    width: 11em;
+    height: 11em;
+    overflow: hidden;
+    margin-bottom: 1em;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 10px;
+}
+
+.imagemPost img {
+    width: 11em;
+    height: 11em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.titulo {
+    display: inline-block;
+    text-align: left;
+}
+
+.titulo h2 {
+    word-wrap: break-word;
+    height: 4em;
+}
+
+.titulo h2::first-letter {
+    text-transform: uppercase;
+}
+
+h2,
+.numero {
+    display: inline-block;
+    margin-bottom: 0;
+    height: min-content;
+}
+
+.rodape {
+    text-align: end;
+    margin-top: 1em;
+}
+
+.basettl {
+    margin-bottom: 0;
+    display: block;
+}
+
+.texto {
+    text-align: justify;
+    padding: 0 1em;
+    font-size: 25px;
+}
+
+.informacoes {
+    padding: 0;
+}
+
+.caixa {
+    margin: 3rem;
+    margin-top: none;
+}
+
+.novoComentario {
+    height: min-content;
+    margin-top: 1em;
+}
+
+.novoComentario input {
+    margin-bottom: 0;
+}
+
+.novoComentario button {
+    position: relative;
+    left: 48.3%;
+    bottom: 2.1rem;
+    border-radius: 20px;
+}
+
+.lista .card {
+    margin: 1em 0;
+    padding: 1em;
+}
+
+cite {
+    text-align: right;
+    color: orange;
+}
+
+q {
+    text-align: left;
+    font-size: 22px;
 }

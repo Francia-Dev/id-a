@@ -138,22 +138,51 @@ h3 {
 }
 
 .imagem2 img {
-    height: 25rem;
+    /* height: 25rem; */
     display: inline-block;
+    margin-top: 1.5%;
 }
 
 .imagem2 .texto {
-    display: inline-block
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .imagem3 img {
-    height: 25rem;
+    /* vertical-align: middle; */
+}
+
+.conteudo {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.imagem2 h2 {
+    font-size: 28px;
+    color: rgb(183, 228, 241);
+    text-align: justify;
+}
+
+.imagem2 h3 {
+    font-size: 35px;
+    text-align: center;
+    color: rgb(250, 212, 43);
 }
 
 .imagem2 {
-    background-color: #1595BC
+    background-color: #1595BC;
+    height: 25rem;
+}
+
+.imagem3 h2 {
+    color: rgb(183, 233, 233);
+}
+
+.imagem3 h3 {
+    color: rgb(15, 100, 100);
 }
 
 .imagem3 {
+    text-align: center;
     background-color: #2DBFC0;
 }
