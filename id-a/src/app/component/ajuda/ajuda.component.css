@@ -52,7 +52,8 @@
 
 .botao {
     padding: 0 10%;
-    margin: 1em;
+    width: 50%;
+    margin: 1em 25%;
 }
 
 .erro {
@@ -123,4 +124,8 @@
 textarea {
     max-height: 8em;
     min-height: 4em;
+}
+
+input {
+    margin-bottom: 1em
 }

@@ -104,10 +104,10 @@
     <div id="listaPosts" style="margin-top: 1em;">
 
         <div *ngIf="posts != null">
+            <div *ngFor="let item of posts.slice().reverse(); let i = index">
 
-            <div class="conteudo">
+                <div class="conteudo">
 
-                <div *ngFor="let item of posts.slice().reverse(); let i = index">
 
 
                     <div class="header row">
@@ -145,31 +145,31 @@
 
 
                 </div>
-            </div>
 
 
 
-            <div class="comentarios">
+
+                <div class="comentarios">
 
 
 
-                <div *ngFor="let item of item?.comentario">
-                    <div class="lista">
+                    <div *ngFor="let item of item?.comentario">
+                        <div class="lista">
 
-                        <div class="card">
-                            <cite class="nomeComentario">{{item.usuario?.nome}}</cite>
-                            <q class="corpoComentario">{{item?.texto}}</q>
+                            <div class="card">
+                                <q class="corpoComentario">{{item?.texto}}</q>
+                                <cite class="nomeComentario">{{item.usuario?.nome}}</cite>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
+                <div class="novoComentario">
+                    <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
+                    <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario2(item.idPostagem)">✉</button>
+                </div>
             </div>
-
-            <div class="novoComentario">
-                <input type="text" [(ngModel)]="novoComentario2" class="textocomentario" placeholder="Comentar..." />
-                <button [id]="item?.idPostagem" class="enviarcomentario botaobuscar" (click)="enviarComentario2(item.idPostagem)">✉</button>
-            </div>
-
             <!-- <div id="listaPosts">
                 <div *ngIf="posts != null">
                     <div class="" *ngFor="let item of posts.slice().reverse(); let i = index">
